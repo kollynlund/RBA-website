@@ -2,7 +2,7 @@ header {
 	width: 100%;
 	border-bottom: solid 1px #d9d9de;
 	display: block;
-	background-color: white;
+	background-color: #222;
 	margin-top: 0px;
 
 }
@@ -88,12 +88,13 @@ header {
 	color: #828587;
     display: inline-block;
     font-size: 14px;
-
     font-weight: 500;
     letter-spacing: .05em;
     &:hover {
     	background: #f7fafa;
+        background: #444;
         text-decoration: none;
+        color: #ccc;
     }
     @media (max-width: 700px){
   //      padding: 23px 10px 20px 10px;
