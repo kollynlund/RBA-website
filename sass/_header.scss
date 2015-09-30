@@ -1,0 +1,112 @@
+header {
+	width: 100%;
+	border-bottom: solid 1px #d9d9de;
+	display: block;
+	background-color: white;
+	margin-top: 0px;
+
+}
+
+.site-logo {
+	display: inline-block;
+    margin: 0;
+    margin-right: 1.125em;
+    font-size: 100%;
+    vertical-align: baseline;
+    line-height: 30px;
+    font-size: 1.125em;
+    text-align: left;
+    white-space: nowrap;
+    img {
+    	height: 25px;
+    }
+    @media (max-width: 550px){
+        width: 100%;
+        text-align: center;
+        margin-left: 0px;
+    }    
+    @media (max-width: 550px){
+        display: block;
+        margin: .5em auto; 
+        padding: 1em !important;
+        width: 100%;
+    }
+
+}
+
+.primary-menu {
+    width: 68%;
+	margin: 0px 0px 0px 0px;
+	display: inline-block;
+    @media (max-width: 550px){
+        padding-left: 0px;
+        width: 100%;
+    }
+
+}
+
+.primary-menu li {
+    z-index: 500;
+    position: relative;
+    @media (max-width: 545px) {
+        display: block;
+        text-align: center;
+        background-color: #222;
+        width: 100vw;
+        margin-left: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+ .nav-cart {
+    float: right;
+    border-left: 1px solid #d9d9de;
+    @media (max-width: 550px) {
+        float: none;
+    }
+    @media (max-width: 545px) {
+        display: block;
+        text-align: center;
+        background-color: #222;
+        width: 100vw;
+        margin-left: 0px;
+        border-bottom: 1px solid #ccc;
+        border-left: none;
+    }    
+ }
+
+.primary-menu-link {
+	display: inline-block;
+}
+
+.primary-menu-link a {
+	padding: 19px 15px 20px 15px;
+	color: #828587;
+    display: inline-block;
+    font-size: 14px;
+
+    font-weight: 500;
+    letter-spacing: .05em;
+    &:hover {
+    	background: #f7fafa;
+        text-decoration: none;
+    }
+    @media (max-width: 700px){
+  //      padding: 23px 10px 20px 10px;
+    }
+    @media (max-width: 545px) {
+        color: #d9d9de;
+        padding: 1.25em;
+        &:hover {
+            background-color: transparent; 
+            color: white;
+        }
+    }
+
+}
+
+.btn-group-jumbotron {
+    margin-left: 30%;
+    margin-right: auto;
+    display: block;
+}
