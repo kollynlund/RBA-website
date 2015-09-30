@@ -41,6 +41,28 @@ h2 {
 	font-weight: 800;
 }
 
+.jumbotron {
+	background-image: url("../assets/buda.jpg");
+	background-size: 100%;
+	text-align: center;
+	img {
+		width: 170px;
+	}
+	h1 {	
+		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #eee !important;
+	}
+	h2 {
+		color: #eee;
+		width: 60%;
+		font-weight: 300;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+}
+
 .page-text {
 	text-align: center;
 }
