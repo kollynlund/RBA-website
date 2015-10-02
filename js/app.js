@@ -57,7 +57,7 @@ angular.module('rba',['ui.router'])
       controller: 'PhilosophyController'
     });
 
-		$locationProvider.html5Mode(true);
+		// $locationProvider.html5Mode(true);
 })
 
 
