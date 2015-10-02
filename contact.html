@@ -1,164 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Royal Business Academy</title>
-	<link href="sass/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="js/jquery.js"></script>
-	<script src="js/angular.js"></script>
-	<script src="js/app.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900" rel="stylesheet" type="text/css">
+<div class="page-title">
+	<h1>Contact</h1>
+	<p class="page-text">Let us know if you have any questions. We will reply to your message within 24 business hours.</p>
+</div>
 
-</head>
-<body ng-app="contact-form">
-
-	<header>
-			<div class="site-logo">
-				<a href="index.html"><img src="assets/logo-black.png"/></a>
+<div class="wrapper">
+	<div class="form" id="contact_form" ng-controller="SendApplicationController as sac">
+		<div class="form-group">
+			<div class="inputGroupContainer">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+					<input name="first_name" placeholder="First Name" class="form-control" type="text" ng-model="sac.formData.name">
+				</div>
 			</div>
-		<ul class="primary-menu">	
-			<li class="primary-menu-link">
-				<a href="about.html">About RBA</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="philosophy.html">Philosophy</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="courses.html">Courses</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="faculty.html">Faculty</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="faq.html">FAQ</a>
-			</li>			
-			<li class="primary-menu-link">
-				<a href="contact.html">Contact</a>
-			</li>
-		</ul>
-			<li class="primary-menu-link nav-cart">
-				<a href="apply.html">Apply</a>
-			</li>
-			<div class="clearfix"></div>
-	</header>
+		</div>
 
+		<div class="form-group">
+			<div class="inputGroupContainer">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					<input name="email" placeholder="E-Mail Address" class="form-control" type="text" ng-model="sac.formData.email">
+				</div>
+			</div>
+		</div>
 
-	<div class="page-title">
-		<h1>Contact</h1>
-		<p class="page-text">Let us know if you have any questions. We will reply to your message within 24 business hours.</p>
-	</div>
+		<div class="form-group">
+			<div class="inputGroupContainer">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+					<input name="phone" placeholder="(845) 555-1212" class="form-control" type="text" ng-model="sac.formData.phone">
+				</div>
+			</div>
+		</div>
 
-	<div class="wrapper">
-    
-  
+		<div class="form-group">
+			<div class="inputGroupContainer">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+					<textarea class="form-control" name="comment" placeholder="Enter message here" ng-model="sac.formData.message"></textarea>
+				</div>
+			</div>
+		</div>
 
+		<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 
-<div class="form"  id="contact_form" ng-controller="SendApplicationController as sac">
-
-
-
-  <!-- <label class="control-label">Full Name</label>  --> 
-
-<div class="form-group">
-  <div class="inputGroupContainer">
-	  <div class="input-group">
-		  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		  <input name="first_name" placeholder="First Name" class="form-control" type="text" ng-model="sac.formData.name">
-      </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="form-group">
-    <div class="inputGroupContainer">
-	    <div class="input-group">
-	        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-			<input name="email" placeholder="E-Mail Address" class="form-control" type="text" ng-model="sac.formData.email">
-	    </div>
-	</div>
-</div>
-
-
-<div class="form-group"> 
-    <div class="inputGroupContainer">
-	    <div class="input-group">
-	        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-			<input name="phone" placeholder="(845) 555-1212" class="form-control" type="text" ng-model="sac.formData.phone">
-	    </div>
-    </div>
-</div>
-
-  
-<div class="form-group">
-    <div class="inputGroupContainer">
-	    <div class="input-group">
-	        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="comment" placeholder="Enter message here" ng-model="sac.formData.message"></textarea>
+		<div id="send-email" class="form-group">
+			<button class="btn" id="btn-positive-submit" ng-click="sac.submitForm()">Send </button>
 		</div>
 	</div>
 </div>
-
-
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-
-<div id="send-email" class="form-group">
-    <button class="btn" id="btn-positive-submit" ng-click="sac.submitForm()">Send </button>
-</div>
-
-</div>
-
-
-</div>
-
-
-
-
-
-	</div>
-</div>
-
-
-
-
-<div class="footer-wrapper">
-    <div class="footer">
-    	<div class="column-left footer-column">
-			<h3 class="footer-title">Fundraiser Info</h3>
-			<p><a href="index.php">Our Mission</a></p>
-			<p><a href="index.php">Art Schools</a></p>
-			<p><a href="index.php">Our donors</a></p>
-			<p><a href="index.php">Customer support</a></p>
-		</div>
-
-		<div class="column-center footer-column">
-			<h3 class="footer-title">Our Customers</h3>
-			<p><a href="index.php">Gallery</a></p>
-			<p><a href="index.php">Contact us</a></p>
-			<p><a href="index.php">Current Artist</a></p>
-			<p><a href="index.php">Sponsors</a></p>
-		</div>
-
-
-		<div class="column-right footer-column">
-			<h3 class="footer-title">Links</h3>
-			<p><a href="contact.php">Products</a></p>
-			<p><a href="resources.php">Contact us</a></p>
-			<p><a href="https://www.youtube.com/user/fireboxstove"><i class="fa fa-youtube-play"></i> YouTube</a></p>
-			<p><a href="https://www.linkedin.com/pub/byu-technology-transfer/82/48b/a97"><i class="fa fa-linkedin"></i> Linkedin</a></p>
-		</div>
-    </div>
-    <p id="copyright">Roso Art is a brain child of Kollyn Lund and Tanner Bindrup</p>
-</div>
-
-
-
-<script src="js/jquery.js"></script>
-</body>
-</html>

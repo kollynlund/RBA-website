@@ -2,88 +2,20 @@
 <html>
 <head>
 	<title>Royal Business Academy</title>
+	<base href="/">
 	<link href="sass/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900" rel="stylesheet" type="text/css">
 
+	<script src="js/jquery.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
-<body>
-	<header>
-			<div class="site-logo">
-				<a href="index.html"><img src="assets/profile.png"/></a>
-			</div>
-		<ul class="primary-menu">
-			<li class="primary-menu-link">
-				<a href="about.html">About RBA</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="philosophy.html">Philosophy</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="courses.html">Courses</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="faculty.html">Faculty</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="faq.html">FAQ</a>
-			</li>
-			<li class="primary-menu-link">
-				<a href="contact.html">Contact</a>
-			</li>
-		</ul>
-			<li class="primary-menu-link nav-cart">
-				<a href="apply.html">Apply</a>
-			</li>
-			<div class="clearfix"></div>
-	</header>
-		<video width="100%" autoplay loop>
-  <source src="eu.mp4" type="video/mp4">
-</video>
-<div class="jumbotron">
-
-<!-- 	<img class="logo" src="assets/profile.png"> -->
-  <h1>Royal Business Academy</h1>
-  <h2>Business Education and Mentoring Services for Young Adults Throughout the World</h2>
-  <h2><button type="button" class="btn btn-main btn-lg">Learn About Our Vision</button></h2>
-</div>
-
-
-<div class="footer-wrapper">
-    <div class="footer">
-    	<div class="column-left footer-column">
-				<h3 class="footer-title">Our Mission</h3>
-				<p><a href="index.php">The reason why</a></p>
-				<p><a href="index.php">Become a contributing artist</a></p>
-				<p><a href="index.php">Become a donor</a></p>
-				<p><a href="index.php"></a></p>
-			</div>
-
-			<div class="column-center footer-column">
-				<h3 class="footer-title">More Info</h3>
-				<p><a href="index.php">Legal</a></p>
-				<p><a href="index.php">Our Donors</a></p>
-				<p><a href="index.php">Contact us</a></p>
-			</div>
-
-
-			<div class="column-right footer-column">
-				<h3 class="footer-title">Links</h3>
-				<p><a href="https://www.youtube.com/user/fireboxstove"><i class="fa fa-youtube-play"></i> YouTube</a></p>
-				<p><a href="https://www.linkedin.com/pub/byu-technology-transfer/82/48b/a97"><i class="fa fa-linkedin"></i> Linkedin</a></p>
-			</div>
-			<p id="copyright">© 2015 by Royal Business Academy International, LLC. All rights reserved.</p>
-    </div>
-</div>
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-
-
+<body ng-app="rba">
+	<div ng-include src="'header.html'"></div>
+	<ui-view autoscroll="false"></ui-view>
+	<div ng-include src="'footer.html'"></div>
 </body>
 </html>
