@@ -1,0 +1,33 @@
+.mission-statement {
+	background-color: #fff;
+	width: 75%;
+	max-width: 1000px;
+	margin: auto;
+	box-sizing: border-box;
+	min-height: 267px;
+	.left {
+		width: 60%;
+		display: inline-block;
+	}
+	.right {
+		width: 39%;
+		display: inline-block;
+		float: right;
+	}
+	h2 {
+		font-weight: bold;
+		color: #333;
+		padding: .5em;
+	}
+	p {
+		padding-left: 1em;
+		padding-bottom: 1em;
+		line-height: 1.5em;
+		padding-right: 1em;
+	}
+	img {
+		background-color: red;
+		width: 100%;
+		display: inline-block;
+	}
+}

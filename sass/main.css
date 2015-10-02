@@ -476,6 +476,34 @@ textarea.form-control {
   min-width: 9em;
   float: right; }
 
+.mission-statement {
+  background-color: #fff;
+  width: 75%;
+  max-width: 1000px;
+  margin: auto;
+  box-sizing: border-box;
+  min-height: 267px; }
+  .mission-statement .left {
+    width: 60%;
+    display: inline-block; }
+  .mission-statement .right {
+    width: 39%;
+    display: inline-block;
+    float: right; }
+  .mission-statement h2 {
+    font-weight: bold;
+    color: #333;
+    padding: .5em; }
+  .mission-statement p {
+    padding-left: 1em;
+    padding-bottom: 1em;
+    line-height: 1.5em;
+    padding-right: 1em; }
+  .mission-statement img {
+    background-color: red;
+    width: 100%;
+    display: inline-block; }
+
 .clearfix:after {
   content: ".";
   visibility: hidden;
@@ -485,6 +513,7 @@ textarea.form-control {
 
 body {
   background-color: #eee;
+  background-color: #edefed !important;
   font-family: Arial;
   background-repeat: no-repeat;
   background-size: cover;
@@ -509,7 +538,8 @@ h2 {
     font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 900;
     text-transform: uppercase;
-    color: #333 !important; }
+    color: #333 !important;
+    margin-bottom: 1em; }
 
 .jumbotron {
   background-size: 100%;
