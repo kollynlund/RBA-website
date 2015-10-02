@@ -115,7 +115,7 @@ angular.module('rba',['ui.router'])
 })
 
 .controller('FooterController', function() {
-
+  this.currentYear = new Date().getFullYear();
 })
 
 

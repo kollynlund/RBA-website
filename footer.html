@@ -1,4 +1,4 @@
-<div class="footer-wrapper">
+<div class="footer-wrapper" ng-controller="FooterController as fc">
   <div class="footer">
     <div class="column-left footer-column">
       <h3 class="footer-title">Our Mission</h3>
@@ -21,6 +21,6 @@
       <p><a href="https://www.youtube.com/user/fireboxstove"><i class="fa fa-youtube-play"></i> YouTube</a></p>
       <p><a href="https://www.linkedin.com/pub/byu-technology-transfer/82/48b/a97"><i class="fa fa-linkedin"></i> Linkedin</a></p>
     </div>
-    <p id="copyright">© 2015 by Royal Business Academy International, LLC. All rights reserved.</p>
+    <p id="copyright">© {{fc.currentYear}} by Royal Business Academy International, LLC. All rights reserved.</p>
   </div>
 </div>
