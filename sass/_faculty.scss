@@ -1,4 +1,13 @@
+.faculty h1 {
+	margin-bottom: 2em !important;
+}
+
+
 .cards {
+	&:hover {
+		opacity: .8;
+		cursor: pointer;
+	}
 	@media (max-width: 767px) {
 		width: 60%;
 		margin: auto;
@@ -21,15 +30,23 @@
 	  padding-bottom: 0px;
 	  margin-bottom: 30px;
 	  .name {
+	  	font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	  	font-size: 1.5em;
 		  white-space: nowrap;
 			width: 100%;                   
 		  overflow: hidden;              /* "overflow" value must be different from "visible" */ 
 		  text-overflow: ellipsis;
 	  }
 	  .title {
+	  	font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	  	font-weight: 400;
+	  	letter-spacing: 1px;
 	  	padding: 0em 1.125em;
 	  	height: 3.5em;
-	  	font-style: italic;
+			width: 100%;                   
+		  overflow: hidden;              /* "overflow" value must be different from "visible" */ 
+		  text-overflow: ellipsis;
+	
 	  }
 	  p:first-child {
 	  	&:before {

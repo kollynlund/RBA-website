@@ -499,7 +499,7 @@ textarea.form-control {
     display: inline-block;
     float: right; }
   .mission-statement h2 {
-    font-weight: bold;
+    font-weight: 800;
     font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #333;
     text-transform: uppercase;
@@ -508,7 +508,9 @@ textarea.form-control {
     padding-left: 1em;
     padding-bottom: 1em;
     line-height: 1.5em;
-    padding-right: 1em; }
+    padding-right: 1em;
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400; }
   .mission-statement img {
     background-color: red;
     width: auto;
@@ -531,6 +533,40 @@ textarea.form-control {
     font-size: 1.75em;
     text-transform: uppercase; }
 
+#courses {
+  font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-bottom: 5em; }
+  #courses h2 {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 800;
+    text-align: left;
+    margin-top: 1em; }
+    #courses h2 i {
+      color: #aaa;
+      margin-right: 10px; }
+
+.main-text {
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.25em;
+  line-height: 1.125em;
+  word-spacing: 1px; }
+
+.big-icon {
+  text-align: center;
+  width: 10em;
+  margin-bottom: 4em; }
+
+.ad {
+  text-align: center; }
+
+.week-schedule h4 {
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 800;
+  font-size: 1.5em; }
+.week-schedule p {
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.125em; }
+
 .apply-container {
   width: 80% !important;
   margin: auto !important; }
@@ -547,6 +583,12 @@ input [type="file"] {
   margin: auto;
   margin-bottom: 7em !important; }
 
+.faculty h1 {
+  margin-bottom: 2em !important; }
+
+.cards:hover {
+  opacity: .8;
+  cursor: pointer; }
 @media (max-width: 767px) {
   .cards {
     width: 60%;
@@ -567,19 +609,84 @@ input [type="file"] {
   padding-bottom: 0px;
   margin-bottom: 30px; }
   .cards .details .name {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
     white-space: nowrap;
     width: 100%;
     overflow: hidden;
     /* "overflow" value must be different from "visible" */
     text-overflow: ellipsis; }
   .cards .details .title {
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
     padding: 0em 1.125em;
     height: 3.5em;
-    font-style: italic; }
+    width: 100%;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis; }
   .cards .details p:first-child:before {
     content: " - "; }
   .cards .details p:first-child:after {
     content: " - "; }
+
+#about {
+  font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-bottom: 5em; }
+  #about h2 {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 800;
+    text-align: left;
+    margin-top: 2em; }
+    #about h2 i {
+      color: #aaa;
+      margin-right: 5px;
+      position: relative;
+      top: 3px; }
+
+.main-text {
+  font-size: 1.25em;
+  line-height: 1.125em;
+  word-spacing: 1px; }
+
+li {
+  font-size: 1.25em;
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+#about ul {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+.icons-about {
+  margin: auto !important;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4em !important; }
+  .icons-about img {
+    width: 8em !important;
+    text-align: center;
+    margin: auto;
+    padding: 1em; }
+  .icons-about .main {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    font-size: 1.75em;
+    text-transform: uppercase;
+    line-height: 1.125em;
+    font-weight: 800; }
+  .icons-about p {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+.video-wrapper {
+  text-align: center; }
+
+iframe {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  max-width: 800px; }
 
 .clearfix:after {
   content: ".";
@@ -595,7 +702,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: normal;
-  margin: 0px; }
+  margin: 0px;
+  font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif; }
 
 h1 {
   color: #0f2105;
@@ -607,7 +715,6 @@ h2 {
 
 .page-title {
   margin-top: 0em;
-  width: 100vw;
   padding: 1.25em 0 0em 0;
   color: #6d6e70;
   font-weight: 800; }
@@ -654,10 +761,6 @@ h2 {
 .page-text {
   text-align: center; }
 
-iframe {
-  margin: auto;
-  text-align: center; }
-
 h6 {
   color: #0f2105;
   font-size: 1.25em;
@@ -678,9 +781,6 @@ a {
   width: 90%;
   margin: 0 auto;
   padding-bottom: 3em; }
-
-.video-wrapper {
-  text-align: center; }
 
 #wrapper {
   max-width: 1100px;
