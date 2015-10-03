@@ -1,0 +1,43 @@
+.cards {
+	@media (max-width: 767px) {
+		width: 60%;
+		margin: auto;
+		}
+	@media (max-width: 450px) {
+		width: 90%;
+		margin: auto;
+		}		
+	img {
+		text-align: center;
+		width: 100%;
+
+	}
+	.details {
+		text-align: center;
+		padding: 1em .5em;
+		background-color: #fff;
+		color: #000;
+		text-transform: uppercase;
+	  padding-bottom: 0px;
+	  margin-bottom: 30px;
+	  .name {
+		  white-space: nowrap;
+			width: 100%;                   
+		  overflow: hidden;              /* "overflow" value must be different from "visible" */ 
+		  text-overflow: ellipsis;
+	  }
+	  .title {
+	  	padding: 0em 1.125em;
+	  	height: 3.5em;
+	  	font-style: italic;
+	  }
+	  p:first-child {
+	  	&:before {
+	  		content: " - ";
+	  	}
+	  	&:after {
+	  		content: " - ";
+	  	}	  	
+	  }
+	}
+}

@@ -1,4 +1,4 @@
-angular.module('rba',['ui.router'])
+angular.module('rba',['ui.router','ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
@@ -16,8 +16,8 @@ angular.module('rba',['ui.router'])
     })
 
     .state('apply', {
-      url: '/applu',
-      templateUrl: 'applu.html',
+      url: '/apply',
+      templateUrl: 'apply.html',
       controller: 'ApplyController'
     })
 

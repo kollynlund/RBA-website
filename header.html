@@ -1,6 +1,6 @@
 <header ng-controller="HeaderController as hc">
     <div class="site-logo">
-      <a href="index.html"><img src="assets/profile.png"/></a>
+      <a ng-click="hc.goTo('home')" href="index.html"><img src="assets/profile.png"/></a>
     </div>
   <ul class="primary-menu">
     <li class="primary-menu-link" ng-click="hc.goTo('about')">

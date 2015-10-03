@@ -235,6 +235,9 @@ a[href="https://www.youtube.com/user/fireboxstove"] i {
 a[href="https://www.linkedin.com/pub/byu-technology-transfer/82/48b/a97"] i {
   width: 1.1em; }
 
+#contact {
+  background-color: #fff; }
+
 #success_message {
   display: none; }
 
@@ -266,7 +269,11 @@ a[href="https://www.linkedin.com/pub/byu-technology-transfer/82/48b/a97"] i {
   font-weight: 200 !important; }
 
 .form-control {
-  padding: 1.5em .9em !important; }
+  padding: 1em .9em; }
+
+.form-group .form-textbox {
+  padding-bottom: 4em;
+  padding-top: 1.5em; }
 
 textarea.form-control {
   height: 8em !important; }
@@ -478,11 +485,12 @@ textarea.form-control {
 
 .mission-statement {
   background-color: #fff;
-  width: 75%;
+  width: 85%;
   max-width: 1000px;
   margin: auto;
   box-sizing: border-box;
-  min-height: 267px; }
+  min-height: 267px;
+  margin-bottom: 8em; }
   .mission-statement .left {
     width: 60%;
     display: inline-block; }
@@ -492,7 +500,9 @@ textarea.form-control {
     float: right; }
   .mission-statement h2 {
     font-weight: bold;
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #333;
+    text-transform: uppercase;
     padding: .5em; }
   .mission-statement p {
     padding-left: 1em;
@@ -501,8 +511,75 @@ textarea.form-control {
     padding-right: 1em; }
   .mission-statement img {
     background-color: red;
+    width: auto;
+    display: inline-block;
+    height: 267px; }
+
+.icons {
+  margin: auto !important;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 4em !important; }
+  .icons img {
+    width: 8em;
+    text-align: center;
+    margin: auto;
+    padding: 1em; }
+  .icons p {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    font-size: 1.75em;
+    text-transform: uppercase; }
+
+.apply-container {
+  width: 80% !important;
+  margin: auto !important; }
+
+#apply {
+  background-color: #fff; }
+
+input [type="file"] {
+  background-color: red !important; }
+
+#faq {
+  width: 80%;
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 7em !important; }
+
+@media (max-width: 767px) {
+  .cards {
+    width: 60%;
+    margin: auto; } }
+@media (max-width: 450px) {
+  .cards {
+    width: 90%;
+    margin: auto; } }
+.cards img {
+  text-align: center;
+  width: 100%; }
+.cards .details {
+  text-align: center;
+  padding: 1em .5em;
+  background-color: #fff;
+  color: #000;
+  text-transform: uppercase;
+  padding-bottom: 0px;
+  margin-bottom: 30px; }
+  .cards .details .name {
+    white-space: nowrap;
     width: 100%;
-    display: inline-block; }
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis; }
+  .cards .details .title {
+    padding: 0em 1.125em;
+    height: 3.5em;
+    font-style: italic; }
+  .cards .details p:first-child:before {
+    content: " - "; }
+  .cards .details p:first-child:after {
+    content: " - "; }
 
 .clearfix:after {
   content: ".";
@@ -538,18 +615,25 @@ h2 {
     font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 900;
     text-transform: uppercase;
-    color: #333 !important;
-    margin-bottom: 1em; }
+    color: #333;
+    margin-bottom: .5em;
+    margin-top: 1em; }
+
+.page-container {
+  width: 80%;
+  margin: auto;
+  max-width: 1100px; }
 
 .jumbotron {
   background-size: 100%;
   background-color: transparent !important;
   padding-top: 0px !important;
+  padding-bottom: 0px !important;
   text-align: center;
   height: 735px;
-  margin-bottom: 0px !important;
   position: relative;
-  margin-top: -500px; }
+  margin-top: -500px;
+  margin-bottom: -261px !important; }
   .jumbotron img {
     width: 170px; }
   .jumbotron h1 {
