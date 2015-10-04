@@ -1,4 +1,4 @@
-angular.module('rba',['ui.router','ui.bootstrap'])
+angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 

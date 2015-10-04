@@ -583,6 +583,10 @@ input [type="file"] {
   margin: auto;
   margin-bottom: 7em !important; }
 
+.accordian {
+  margin-bottom: 2em;
+  margin-top: 4em; }
+
 .faculty h1 {
   margin-bottom: 2em !important; }
 
