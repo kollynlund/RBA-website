@@ -107,8 +107,18 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 })
 
-.controller('HomeController', function() {
-
+.controller('HomeController', function($scope) {
+  // Watch for changes in the window width
+	$(window).on("resize.doResize", function (){
+		$scope.$apply(function(){
+      $scope.videoHeight = $("video:first").height();
+		});
+	});
+	$scope.$on("$destroy",function (){
+		// Kill resize listener
+		 $(window).off("resize.doResize");
+	});
+	// -------------------------------------
 })
 
 .controller('NewsletterController', function() {
@@ -126,6 +136,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
+      $scope.videoHeight = $("video:first").height();
       $scope.showMenu = false;
 		  $scope.windowWidth = $window.innerWidth;
 		});
