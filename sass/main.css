@@ -766,7 +766,7 @@ video {
   position: relative;
   width: 100vw;
   margin-top: -50%;
-  margin-bottom: -261px !important; }
+  margin-bottom: -10% !important; }
   @media (max-width: 1000px) {
     .jumbotron {
       font-size: 1.125em; } }
