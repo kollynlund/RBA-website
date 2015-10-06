@@ -120,11 +120,14 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 })
 
 .controller('HeaderController', function($scope,$state,$window) {
-  this.windowWidth = $window.innerWidth;
+  $scope.windowWidth = $window.innerWidth;
+  $scope.showMenu = false;
+  console.log($scope.windowWidth);
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
-		   this.windowWidth = $window.innerWidth;
+      $scope.showMenu = false;
+		  $scope.windowWidth = $window.innerWidth;
 		});
 	});
 	$scope.$on("$destroy",function (){

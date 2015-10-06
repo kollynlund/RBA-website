@@ -3,33 +3,33 @@
       <a ng-click="hc.goTo('home')" href="index.html"><img src="assets/profile.png"/></a>
     </div>
 
-<div ng-if="hc.windowWidth >= 800" class="main-header">    
-  <ul class="primary-menu">
-    <li class="primary-menu-link" ng-click="hc.goTo('about')">
-      <a>About RBA</a>
-    </li>
-    <li class="primary-menu-link" ng-click="hc.goTo('philosophy')">
-      <a>Philosophy</a>
-    </li>
-    <li class="primary-menu-link" ng-click="hc.goTo('courses')">
-      <a>Courses</a>
-    </li>
-    <li class="primary-menu-link" ng-click="hc.goTo('faculty')">
-      <a>Faculty</a>
-    </li>
-    <li class="primary-menu-link" ng-click="hc.goTo('faq')">
-      <a>FAQ</a>
-    </li>
-    <li class="primary-menu-link" ng-click="hc.goTo('contact')">
-      <a>Contact</a>
-    </li>
-  </ul>
-    <li class="primary-menu-link nav-cart" ng-click="hc.goTo('apply')">
-      <a>Apply</a>
-    </li>
-    <div class="clearfix"></div>
-</div>
+    <div ng-if="windowWidth >= 800 || showMenu" class="main-header">
+      <ul class="primary-menu">
+        <li class="primary-menu-link" ng-click="hc.goTo('about')">
+          <a>About RBA</a>
+        </li>
+        <li class="primary-menu-link" ng-click="hc.goTo('philosophy')">
+          <a>Philosophy</a>
+        </li>
+        <li class="primary-menu-link" ng-click="hc.goTo('courses')">
+          <a>Courses</a>
+        </li>
+        <li class="primary-menu-link" ng-click="hc.goTo('faculty')">
+          <a>Faculty</a>
+        </li>
+        <li class="primary-menu-link" ng-click="hc.goTo('faq')">
+          <a>FAQ</a>
+        </li>
+        <li class="primary-menu-link" ng-click="hc.goTo('contact')">
+          <a>Contact</a>
+        </li>
+      </ul>
+        <li class="primary-menu-link nav-cart" ng-click="hc.goTo('apply')">
+          <a>Apply</a>
+        </li>
+        <div class="clearfix"></div>
+    </div>
 
 
-    <i ng-if="hc.windowWidth < 800" class="fa fa-bars menu"></i>
+    <i ng-if="windowWidth < 800" class="fa fa-bars menu" ng-click="showMenu = !showMenu"></i>
 </header>
