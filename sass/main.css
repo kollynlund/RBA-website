@@ -567,18 +567,6 @@ textarea.form-control {
   font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1.125em; }
 
-#apply {
-  font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  margin-bottom: 5em; }
-  #apply h2 {
-    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 800;
-    text-align: left;
-    margin-top: 1em; }
-    #apply h2 i {
-      color: #aaa;
-      margin-right: 10px; }
-
 .apply-container {
   width: 80% !important;
   margin: auto !important; }
@@ -752,6 +740,9 @@ h2 {
   width: 80%;
   margin: auto;
   max-width: 1100px; }
+
+.menu {
+  background-color: red; }
 
 .jumbotron {
   background-size: 100%;

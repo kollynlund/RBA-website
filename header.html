@@ -2,6 +2,8 @@
     <div class="site-logo">
       <a ng-click="hc.goTo('home')" href="index.html"><img src="assets/profile.png"/></a>
     </div>
+
+<div ng-if="hc.windowWidth >= 800" class="main-header">    
   <ul class="primary-menu">
     <li class="primary-menu-link" ng-click="hc.goTo('about')">
       <a>About RBA</a>
@@ -26,4 +28,8 @@
       <a>Apply</a>
     </li>
     <div class="clearfix"></div>
+</div>
+
+
+    <i ng-if="hc.windowWidth < 800" class="fa fa-bars menu"></i>
 </header>
