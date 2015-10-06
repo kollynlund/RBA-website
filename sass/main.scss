@@ -74,6 +74,11 @@ h2 {
 	}
 }
 
+video {
+	z-index: -10;
+	position: relative;
+	width: 100vw;
+}
 
 .jumbotron {
 //	background-image: url("../assets/buda.jpg");
@@ -84,11 +89,14 @@ h2 {
 	text-align: center;
 	height: 735px;
 	position: relative;
-	// margin-top: -500px;
-	// margin-bottom: -261px !important;
-	@media (max-width: 500px) {
+	width: 100vw;
+	margin-top: -50%;
+	margin-bottom: -261px !important;
+	@media (max-width: 1000px) {
+		font-size: 1.125em;
 
 	}
+
 	img {
 		width: 170px;
 	}
@@ -98,6 +106,9 @@ h2 {
 		text-transform: uppercase;
 		color: #eee !important;
 		text-shadow: 2px 2px 2px #000;
+		@media (max-width: 1000px) {
+		font-size: 2.5em !important;
+	}
 	}
 	h2 {
 		color: #eee;
@@ -107,9 +118,8 @@ h2 {
 		margin: auto;
 		margin-bottom: 20px;
 		font-size: 2em;
-		@media (max-width: 500px) {
-			font-size: 1.125em;
-
+	@media (max-width: 1000px) {
+		font-size: 1.125em;
 	}
 	}
 }

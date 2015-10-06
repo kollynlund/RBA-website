@@ -19,17 +19,17 @@ header {
     	height: 65px;
         padding: 2.5px;
     }
-    @media (max-width: 550px){
+    @media (max-width: 935px){
         width: 100%;
         text-align: center;
         margin-left: 0px;
     }    
-    @media (max-width: 550px){
-        display: block;
-        margin: .5em auto; 
-        padding: 1em !important;
-        width: 100%;
-    }
+    // @media (max-width: 935px){
+    //     display: block;
+    //     margin: .5em auto; 
+    //     padding: 1em !important;
+    //     width: 100%;
+    // }
 
 }
 
@@ -38,7 +38,7 @@ header {
 	margin: 0px 0px 0px 0px;
 	display: inline-block;
     padding-left: 10px;
-    @media (max-width: 550px){
+    @media (max-width: 935px){
         padding-left: 0px;
         width: 100%;
     }
@@ -48,7 +48,10 @@ header {
 .primary-menu li {
     z-index: 500;
     position: relative;
-    @media (max-width: 545px) {
+    &:hover {
+        cursor: pointer;
+    }
+    @media (max-width: 935px) {
         display: block;
         text-align: center;
         background-color: #222;
@@ -58,17 +61,20 @@ header {
     }
 }
 
- .nav-cart {
+ .nav-apply {
     float: right;
     border-left: 1px solid #d9d9de;
+    &:hover {
+        cursor: pointer !important;
+    }
     a {
         padding-left: 30px !important;
         padding-right: 30px !important;
     }
-    @media (max-width: 550px) {
+    @media (max-width: 935px) {
         float: none;
     }
-    @media (max-width: 545px) {
+    @media (max-width: 935px) {
         display: block;
         text-align: center;
         background-color: #222;
@@ -96,10 +102,10 @@ header {
         text-decoration: none;
         color: #ccc;
     }
-    @media (max-width: 700px){
-  //      padding: 23px 10px 20px 10px;
+    @media (max-width: 935px){
+       padding: 23px 10px 20px 10px;
     }
-    @media (max-width: 545px) {
+    @media (max-width: 935px) {
         color: #d9d9de;
         padding: 1.25em;
         &:hover {

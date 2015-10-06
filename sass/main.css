@@ -16,24 +16,18 @@ header {
   .site-logo img {
     height: 65px;
     padding: 2.5px; }
-  @media (max-width: 550px) {
+  @media (max-width: 935px) {
     .site-logo {
       width: 100%;
       text-align: center;
       margin-left: 0px; } }
-  @media (max-width: 550px) {
-    .site-logo {
-      display: block;
-      margin: .5em auto;
-      padding: 1em !important;
-      width: 100%; } }
 
 .primary-menu {
   width: 68%;
   margin: 0px 0px 0px 0px;
   display: inline-block;
   padding-left: 10px; }
-  @media (max-width: 550px) {
+  @media (max-width: 935px) {
     .primary-menu {
       padding-left: 0px;
       width: 100%; } }
@@ -41,7 +35,9 @@ header {
 .primary-menu li {
   z-index: 500;
   position: relative; }
-  @media (max-width: 545px) {
+  .primary-menu li:hover {
+    cursor: pointer; }
+  @media (max-width: 935px) {
     .primary-menu li {
       display: block;
       text-align: center;
@@ -50,17 +46,19 @@ header {
       margin-left: 0px;
       border-bottom: 1px solid #ccc; } }
 
-.nav-cart {
+.nav-apply {
   float: right;
   border-left: 1px solid #d9d9de; }
-  .nav-cart a {
+  .nav-apply:hover {
+    cursor: pointer !important; }
+  .nav-apply a {
     padding-left: 30px !important;
     padding-right: 30px !important; }
-  @media (max-width: 550px) {
-    .nav-cart {
+  @media (max-width: 935px) {
+    .nav-apply {
       float: none; } }
-  @media (max-width: 545px) {
-    .nav-cart {
+  @media (max-width: 935px) {
+    .nav-apply {
       display: block;
       text-align: center;
       background-color: #222;
@@ -84,7 +82,10 @@ header {
     background: #444;
     text-decoration: none;
     color: #ccc; }
-  @media (max-width: 545px) {
+  @media (max-width: 935px) {
+    .primary-menu-link a {
+      padding: 23px 10px 20px 10px; } }
+  @media (max-width: 935px) {
     .primary-menu-link a {
       color: #d9d9de;
       padding: 1.25em; }
@@ -750,6 +751,11 @@ h2 {
   .menu:hover {
     cursor: pointer; }
 
+video {
+  z-index: -10;
+  position: relative;
+  width: 100vw; }
+
 .jumbotron {
   background-size: 100%;
   background-color: transparent !important;
@@ -757,7 +763,13 @@ h2 {
   padding-bottom: 0px !important;
   text-align: center;
   height: 735px;
-  position: relative; }
+  position: relative;
+  width: 100vw;
+  margin-top: -50%;
+  margin-bottom: -261px !important; }
+  @media (max-width: 1000px) {
+    .jumbotron {
+      font-size: 1.125em; } }
   .jumbotron img {
     width: 170px; }
   .jumbotron h1 {
@@ -766,6 +778,9 @@ h2 {
     text-transform: uppercase;
     color: #eee !important;
     text-shadow: 2px 2px 2px #000; }
+    @media (max-width: 1000px) {
+      .jumbotron h1 {
+        font-size: 2.5em !important; } }
   .jumbotron h2 {
     color: #eee;
     text-shadow: 2px 2px 2px #000;
@@ -774,7 +789,7 @@ h2 {
     margin: auto;
     margin-bottom: 20px;
     font-size: 2em; }
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
       .jumbotron h2 {
         font-size: 1.125em; } }
 
