@@ -108,6 +108,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 })
 
 .controller('HomeController', function($scope) {
+  $scope.videoHeight = $("video:first").height();
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
