@@ -4,7 +4,7 @@
 	<div class="row apply-container">
 		<div class="col-sm-12">
 			<h1>Personal Information</h1>
-			<div class="col-md-6">
+			<div class="col-sm-6">
 
 					<div class="form-group">
 						<div class="inputGroupContainer">
@@ -22,33 +22,26 @@
 								<input name="preferred_name" placeholder="Preferred Name" class="form-control" type="text">
 							</div>
 						</div>			
+					</div>
+
+					<div class="form-group">
+						<div class="inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="native_language" placeholder="Native Language" class="form-control" type="text">
+							</div>
+						</div>			
 					</div>	
 
 					<div class="form-group">
 						<div class="inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<select placeholder="Native Language" class="form-control">
-									<option>Native Language</option>
-									<option>English</option>
-									<option>Czech</option>
-								</select>
+								<input name="other_languages" placeholder="Other Language(s)" class="form-control" type="text">
 							</div>
 						</div>			
-					</div>		
-
-					<div class="form-group">
-						<div class="inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<select placeholder="Native Language" class="form-control">
-									<option>Other Language(s)</option>
-									<option>English</option>
-									<option>Czech</option>
-								</select>
-							</div>
-						</div>			
-					</div>
+					</div>												
+	
 
 			</div>
 
@@ -81,15 +74,18 @@
 					</div>			
 				</div>					
 
-				<div class="form-group">
-					<div class="inputGroupContainer">
-						<div class="input-group">
-							<span>Gender</span>
-							<input type="radio">Male
-							<input type="radio">Female
-						</div>
-					</div>			
-				</div>			
+						<div class="form-group">
+							<div class="inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<select name="passport_country" placeholder="Passport Country*" class="form-control">
+										<option>Gender</option>
+										<option>Male</option>
+										<option>Female</option>
+									<select/>
+								</div>
+							</div>			
+						</div>		
 
 <!-- 				<div class="form-group">
 					<div class="inputGroupContainer">
@@ -180,27 +176,7 @@
 		</div>	
 	</div>
 
-	
 
-	<div class="row apply-container">
-		<h1>Educational Information</h1>	
-		<div class="col-sm-12">	
-		
-				<div class="form-group">
-					<div class="inputGroupContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<select name="passport_country" placeholder="Passport Country*" class="form-control" type="text">
-								<option>No Degree or Diploma</option>
-								<option>Highest Level of Education</option>
-								<option>Highest Level of Education</option>
-							</select>
-						</div>
-					</div>	
-				</div>	
-
-		</div>
-	</div>
 
 			<div class="row apply-container">
 				<h1>Other Information</h1>	
@@ -221,35 +197,50 @@
 							</div>			
 						</div>
 
-					  <div class="form-group">
+<!-- 					  <div class="form-group">
 					    <label for="exampleInputFile">Please upload a photograph of yourself (please make sure your picture is in color and shows your face from the shoulders up)*</label>
 					    <input type="file" id="exampleInputFile">
 					    <p class="help-block"></p>
-					  </div>
+					  </div> -->
 
 					</div>
 					<div class="col-sm-6">
-					    <label for="exampleInputFile">Please upload a Curriculum Vitae (in PDF format)</label>
-					    <input type="file" id="exampleInputFile">
-					    <p class="help-block"></p>						
-					</div>
 
-					<div class="col-sm-6">
-					    <label for="exampleInputFile">Please upload a Statement of Intent indicating why you would like to attend Royal Business Academy (in PDF format)</label>
-					    <input type="file" id="exampleInputFile">
-					    <p class="help-block"></p>						
-					</div>					
-				</div>
+						<div class="form-group">
+							<div class="inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<select name="passport_country" placeholder="Passport Country*" class="form-control" type="text">
+										<option>Highest Level of Education</option>
+										<option>Secondary School</option>
+										<option>College</option>
+									</select>
+								</div>
+							</div>	
+						</div>	
+					</div>
+						
+
+
+						
+				
+	<div class="row apply-container">
+				<h1>Important</h1>	
 				<div class="col-sm-12">	
-					<div class="form-group">
-						<div class="inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="meaningful_service" placeholder="Describe your business idea" class="form-control form-textbox" type="textbox">
-							</div>
-						</div>			
+
+						<p class="main-text">Please email the following files to spencer@royalbusinessacademy.org:</p>
+						<ul>
+							<li>Photo of yourself (More info)</li>
+							<li>CV (More info)</li>
+							<li>Bio(More info)</li>
+							<li>Personal Reference (More info)</li>
+							<li>Professional Reference (More info)</li>
+						</ul>
 					</div>
 				</div>
+
+
+
 				<div class="col-sm-6 col-sm-offset-6">
 					<div id="send-email" class="form-group">
 						<button class="btn" id="btn-positive-submit" ng-click="sac.submitForm()">Send </button>
@@ -259,35 +250,47 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 					</div>
 				</div>
 			</div>	
-		
-
-
-
-
-
-
-
 			
 		</div>		
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 					    <label for="exampleInputFile">Please upload a Curriculum Vitae (in PDF format)</label>
+					    <input type="file" id="exampleInputFile">
+					    <p class="help-block"></p>						
+					</div> -->
+
+		
+<!-- 					    <label for="exampleInputFile">Please upload a Statement of Intent indicating why you would like to attend Royal Business Academy (in PDF format)</label>
+					    <input type="file" id="exampleInputFile">
+					    <p class="help-block"></p>	 -->	
+
+
+
+
+
+
+
+<!-- 				<div class="col-sm-12">	
+					<div class="form-group">
+						<div class="inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="meaningful_service" placeholder="Describe your business idea" class="form-control form-textbox" type="textbox">
+							</div>
+						</div>			
+					</div>
+				</div> -->
