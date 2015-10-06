@@ -742,7 +742,13 @@ h2 {
   max-width: 1100px; }
 
 .menu {
-  background-color: red; }
+  color: #eee;
+  font-size: 1.5em !important;
+  position: absolute;
+  top: 30px;
+  right: 30px; }
+  .menu:hover {
+    cursor: pointer; }
 
 .jumbotron {
   background-size: 100%;
@@ -768,6 +774,9 @@ h2 {
     margin: auto;
     margin-bottom: 20px;
     font-size: 2em; }
+    @media (max-width: 500px) {
+      .jumbotron h2 {
+        font-size: 1.125em; } }
 
 .page-text {
   text-align: center; }

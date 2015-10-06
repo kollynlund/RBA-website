@@ -1,9 +1,15 @@
 <header ng-controller="HeaderController as hc">
+
     <div class="site-logo">
       <a ng-click="hc.goTo('home')" href="index.html"><img src="assets/profile.png"/></a>
     </div>
 
-    <div ng-if="windowWidth >= 800 || showMenu" class="main-header">
+
+    <span ng-animate="'animated'" ng-click="showMenu = !showMenu; console.log('fdsf')">
+      <i ng-if="windowWidth < 800" class="fa fa-bars menu"></i>
+    </span>
+
+    <span ng-if="windowWidth >= 800 || showMenu" class="main-header">
       <ul class="primary-menu">
         <li class="primary-menu-link" ng-click="hc.goTo('about')">
           <a>About RBA</a>
@@ -27,11 +33,7 @@
       <li class="primary-menu-link nav-cart" ng-click="hc.goTo('apply')">
         <a>Apply</a>
       </li>
-      <div class="clearfix"></div>
-    </div>
-
-
-    <span ng-click="showMenu = !showMenu; console.log('fdsf')">
-      <i ng-if="windowWidth < 800" class="fa fa-bars menu"></i>
     </span>
+
+
 </header>
