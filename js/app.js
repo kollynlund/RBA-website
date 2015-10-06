@@ -1,63 +1,61 @@
 angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('home', {
       url: '/',
       templateUrl: 'home.html',
-      controller: 'HomeController'
+      controller: 'HomeController as hc'
     })
 
     .state('about', {
       url: '/about',
       templateUrl: 'about.html',
-      controller: 'AboutController'
+      controller: 'AboutController as ac'
     })
 
     .state('apply', {
       url: '/apply',
       templateUrl: 'apply.html',
-      controller: 'ApplyController'
+      controller: 'ApplyController as apc'
     })
 
     .state('contact', {
       url: '/contact',
       templateUrl: 'contact.html',
-      controller: 'ContactController'
+      controller: 'ContactController as cc'
     })
 
     .state('courses', {
       url: '/courses',
       templateUrl: 'courses.html',
-      controller: 'CoursesController'
+      controller: 'CoursesController as csc'
     })
 
     .state('faculty', {
       url: '/faculty',
       templateUrl: 'faculty.html',
-      controller: 'FacultyController'
+      controller: 'FacultyController as fc'
     })
 
     .state('faq', {
       url: '/faq',
       templateUrl: 'faq.html',
-      controller: 'FAQController'
+      controller: 'FAQController as faqc'
     })
 
 		.state('newsletter', {
       url: '/newsletter',
       templateUrl: 'newsletter.html',
-      controller: 'NewsletterController'
+      controller: 'NewsletterController as nc'
     })
 
 		.state('philosophy', {
       url: '/philosophy',
       templateUrl: 'philosophy.html',
-      controller: 'PhilosophyController'
+      controller: 'PhilosophyController as pc'
     });
-
-		// $locationProvider.html5Mode(true);
 })
 
 
@@ -88,8 +86,21 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 })
 
-.controller('FacultyController', function() {
-
+.controller('FacultyController', function($modal) {
+  this.open = function (facultyMemberName) {
+    console.log('THINGS');
+    var modalInstance = $modal.open({
+      animation: true,
+      templateUrl: 'Faculty Member Profiles/'+facultyMemberName+'.html',
+      controller: 'FacultyModalController',
+      size: 'lg'
+    });
+  };
+})
+.controller('FacultyModalController', function ($modalInstance) {
+  this.close = function () {
+    $modalInstance.close();
+  };
 })
 
 .controller('FAQController', function() {
