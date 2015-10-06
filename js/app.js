@@ -116,7 +116,6 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 .controller('FooterController', function() {
   this.currentYear = new Date().getFullYear();
-  // some things
 })
 
 
