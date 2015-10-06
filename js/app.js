@@ -119,7 +119,19 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 })
 
-.controller('HeaderController', function($state) {
+.controller('HeaderController', function($scope,$state) {
+  // Watch for changes in the window width
+	$(window).on("resize.doResize", function (){
+		$scope.$apply(function(){
+		   this.windowWidth = $window.innerWidth;
+		});
+	});
+	$scope.$on("$destroy",function (){
+		// Kill resize listener
+		 $(window).off("resize.doResize");
+	});
+	// -------------------------------------
+
 	this.goTo = function(pagename) {
 		$state.go(pagename);
 	}
