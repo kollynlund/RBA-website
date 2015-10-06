@@ -751,9 +751,7 @@ h2 {
   padding-bottom: 0px !important;
   text-align: center;
   height: 735px;
-  position: relative;
-  margin-top: -500px;
-  margin-bottom: -261px !important; }
+  position: relative; }
   .jumbotron img {
     width: 170px; }
   .jumbotron h1 {
