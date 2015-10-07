@@ -111,10 +111,12 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 })
 .controller('FAQController', function() {})
 .controller('HomeController', function($scope) {
+  $scope.windowWidth = $window.innerWidth;
   $scope.videoHeight = $("video:first").height();
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
+      $scope.windowWidth = $window.innerWidth;
       $scope.videoHeight = $("video:first").height();
 		});
 	});
@@ -132,7 +134,6 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
-      $scope.videoHeight = $("video:first").height();
       $scope.showMenu = false;
 		  $scope.windowWidth = $window.innerWidth;
 		});
