@@ -14,6 +14,17 @@
 // 	}
 // }
 
+#apply {
+	.page-text {
+			font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1.25em;
+	line-height: 1.125em;
+	word-spacing: 1px;
+	}
+	#send-email {
+		margin: 2em 0em;
+	}
+}
 
 .apply-container {
 	width: 80% !important;
@@ -35,3 +46,12 @@
 input [type="file"] {
 	background-color: red !important;
 }
+
+.apply-container {
+	.more-info {
+	color: #222;
+	text-transform: underline !important;
+	&:hover {
+		cursor: pointer;
+	}
+}}

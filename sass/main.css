@@ -101,10 +101,12 @@ header {
 .footer-wrapper {
   font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
   background: #0A497F;
+  position: relative;
+  z-index: 1;
   background-color: #2e3133;
   padding-top: .4em;
   color: #a5a5a5;
-  border-top: 2px solid #fff;
+  border-top: 1px solid #fff;
   padding-bottom: 2em; }
   .footer-wrapper img {
     display: block;
@@ -428,19 +430,11 @@ textarea.form-control {
 
 .mission-statement {
   background-color: #fff;
-  width: 85%;
   max-width: 1000px;
   margin: auto;
   box-sizing: border-box;
   min-height: 267px;
   margin-bottom: 8em; }
-  .mission-statement .left {
-    width: 60%;
-    display: inline-block; }
-  .mission-statement .right {
-    width: 39%;
-    display: inline-block;
-    float: right; }
   .mission-statement h2 {
     font-weight: 800;
     font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -454,27 +448,38 @@ textarea.form-control {
     padding-right: 1em;
     font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400; }
-  .mission-statement img {
-    background-color: red;
-    width: auto;
-    display: inline-block;
-    height: 267px; }
 
 .icons {
   margin: auto !important;
   width: 80%;
   text-align: center;
   margin-bottom: 4em !important; }
+  @media (max-width: 767px) {
+    .icons {
+      margin-bottom: 2em !important; } }
   .icons img {
     width: 8em;
     text-align: center;
     margin: auto;
     padding: 1em; }
+    @media (max-width: 767px) {
+      .icons img {
+        width: 6em; } }
   .icons p {
     font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #333;
     font-size: 1.75em;
     text-transform: uppercase; }
+    @media (max-width: 767px) {
+      .icons p {
+        font-size: 1.125em; } }
+
+.mission-statement-img {
+  width: 100%; }
+
+.mission-statement-container {
+  width: 90%;
+  margin: auto !important; }
 
 #courses {
   font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -510,6 +515,14 @@ textarea.form-control {
   font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1.125em; }
 
+#apply .page-text {
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.25em;
+  line-height: 1.125em;
+  word-spacing: 1px; }
+#apply #send-email {
+  margin: 2em 0em; }
+
 .apply-container {
   width: 80% !important;
   margin: auto !important; }
@@ -525,6 +538,12 @@ textarea.form-control {
 
 input [type="file"] {
   background-color: red !important; }
+
+.apply-container .more-info {
+  color: #222;
+  text-transform: underline !important; }
+  .apply-container .more-info:hover {
+    cursor: pointer; }
 
 #faq {
   width: 80%;
@@ -690,6 +709,11 @@ iframe {
   height: 0;
   clear: both; }
 
+html {
+  background-color: #2e3133;
+  position: relative;
+  z-index: -1000; }
+
 body {
   background-color: #eee;
   background-color: #edefed !important;
@@ -736,9 +760,46 @@ h2 {
     cursor: pointer; }
 
 video {
-  z-index: -10;
+  z-index: 0;
   position: relative;
   width: 100vw; }
+  @media (max-width: 600px) {
+    video {
+      display: none !important; } }
+
+.jumbo-img {
+  z-index: -10;
+  position: relative;
+  width: 100vw !important; }
+
+.jumbotron-sm {
+  background-image: url(../assets/nyc.jpg);
+  background-size: cover;
+  padding: 1em 0px;
+  min-height: 300px; }
+  .jumbotron-sm h2, .jumbotron-sm h1 {
+    margin: 0px; }
+  .jumbotron-sm h1 {
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #eee !important;
+    text-shadow: 2px 2px 2px #000;
+    padding-top: 30px; }
+  .jumbotron-sm h2 {
+    color: #eee;
+    text-shadow: 2px 2px 2px #000;
+    width: 60%;
+    font-weight: 300;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 2em; }
+    @media (max-width: 1000px) {
+      .jumbotron-sm h2 {
+        font-size: 1.125em; } }
+  @media (min-width: 600px) {
+    .jumbotron-sm {
+      display: none; } }
 
 .jumbotron {
   background-size: 100%;
@@ -753,6 +814,9 @@ video {
   @media (max-width: 1000px) {
     .jumbotron {
       font-size: 1.125em; } }
+  @media (max-width: 600px) {
+    .jumbotron {
+      display: none !important; } }
   .jumbotron img {
     width: 170px; }
   .jumbotron h1 {

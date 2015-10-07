@@ -18,6 +18,11 @@
    clear: both;
 }
 
+html {
+	background-color: #2e3133;
+	position: relative;
+	z-index: -1000;
+}
 
 body {
 //	background-color: #2e3133;
@@ -76,13 +81,56 @@ h2 {
 }
 
 video {
-	z-index: -10;
+	z-index: 0;
 	position: relative;
 	width: 100vw;
+	@media (max-width: 600px) {
+		display: none !important;
+	}
+}
+
+.jumbo-img {
+	z-index: -10;
+	position: relative;
+	width: 100vw !important;
+}
+
+.jumbotron-sm {
+	background-image: url(../assets/nyc.jpg);
+	background-size: cover;
+	padding: 1em 0px;
+	min-height: 300px;
+	h2, h1 {
+		margin: 0px;
+	}
+	h1 {
+		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #eee !important;
+		text-shadow: 2px 2px 2px #000;
+		padding-top: 30px;
+	}
+		h2 {
+		color: #eee;
+		text-shadow: 2px 2px 2px #000;
+		width: 60%;
+		font-weight: 300;
+		margin: auto;
+		margin-bottom: 20px;
+		font-size: 2em;
+	@media (max-width: 1000px) {
+		font-size: 1.125em;
+	}
+	}	
+
+
+	@media(min-width: 600px) {
+		display: none;
+	}
 }
 
 .jumbotron {
-//	background-image: url("../assets/buda.jpg");
 	background-size: 100%;
 	background-color: transparent !important;
 	padding-top: 0px !important;
@@ -95,8 +143,11 @@ video {
 	@media (max-width: 1000px) {
 		font-size: 1.125em;
 	}
-	@media (max-width: 550px) {
+	@media (max-width: 600px) {
+		display: none !important;
 	}
+
+
 
 
 	img {
