@@ -58,13 +58,10 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
     });
 })
 
+.controller('AboutController', function() {})
+.controller('ApplyController', function($modal, DataTransfer) {
+  this.application = {};
 
-
-.controller('AboutController', function() {
-
-})
-
-.controller('ApplyController', function($modal) {
   this.open = function (infoSubject) {
     var modalInstance = $modal.open({
       animation: true,
@@ -74,14 +71,16 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
     });
   };
 
-
+  this.submitForm = function() {
+    // TODO: Add form validation logic
+		DataTransfer.SendApplication(this.application);
+	};
 })
 .controller('ApplyModalController', function ($modalInstance) {
   this.close = function () {
     $modalInstance.close();
   };
 })
-
 .controller('ContactController', function(DataTransfer) {
 	this.formData = {
 		name:'',
@@ -91,15 +90,10 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 	};
 
 	this.submitForm = function() {
-		console.log('submitForm clicked.');
 		DataTransfer.SendEmail(this.formData);
 	};
 })
-
-.controller('CoursesController', function() {
-
-})
-
+.controller('CoursesController', function() {})
 .controller('FacultyController', function($modal) {
   this.open = function (facultyMemberName) {
     var modalInstance = $modal.open({
@@ -115,11 +109,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
     $modalInstance.close();
   };
 })
-
-.controller('FAQController', function() {
-
-})
-
+.controller('FAQController', function() {})
 .controller('HomeController', function($scope) {
   $scope.videoHeight = $("video:first").height();
   // Watch for changes in the window width
@@ -134,19 +124,11 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 	});
 	// -------------------------------------
 })
-
-.controller('NewsletterController', function() {
-
-})
-
-.controller('PhilosophyController', function() {
-
-})
-
+.controller('NewsletterController', function() {})
+.controller('PhilosophyController', function() {})
 .controller('HeaderController', function($scope,$state,$window) {
   $scope.windowWidth = $window.innerWidth;
   $scope.showMenu = false;
-  console.log($scope.windowWidth);
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
@@ -165,14 +147,9 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 		$state.go(pagename);
 	}
 })
-
 .controller('FooterController', function() {
   this.currentYear = new Date().getFullYear();
 })
-
-
-
-
 
 .factory('DataTransfer',function($http) {
 	return {
@@ -199,10 +176,41 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 						]
 					}
 				}
-			}).then(function(data,status,headers,config) {
-				console.log('Sended. Status: ',status);
-				console.log('It\'s me again. Data:',data);
-			})
-		}
+			});
+		},
+    SendApplication: function(the_data) {
+      return $http({
+				method: 'POST',
+				url: 'https://docs.google.com/forms/d/1RQSVmBM_pszroridjughZaDmBXJqW6oBYkXb4qwZg6o/formResponse',
+				headers: {
+					'Content-Type':'application/x-www-form-urlencoded'
+				},
+        transformRequest: function(obj) {
+          var str = [];
+          for(var p in obj)
+          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          return str.join("&");
+        },
+				data: {
+          'entry.1016868082': the_data.first_name || '',
+          'entry.228118714': the_data.preferred_name || '',
+          'entry.1854468818': the_data.native_language || '',
+          'entry.1754735803': the_data.other_languages || '',
+          'entry.914805648': the_data.family_surname || '',
+          'entry.43596061': the_data.date_of_birth || '',
+          'entry.746911070': the_data.how_did_you_hear_about_us || '',
+          'entry.310713888': the_data.gender || '',
+          'entry.1720928449': the_data.street_address || '',
+          'entry.1379844110': the_data.state_province || '',
+          'entry.30784946': the_data.postal_code || '',
+          'entry.1142678642': the_data.telephone_number || '',
+          'entry.453795321': the_data.city || '',
+          'entry.1089792797': the_data.country || '',
+          'entry.1620870347': the_data.email || '',
+          'entry.1239659213': the_data.application_year || '',
+          'entry.327245518': the_data.level_of_education || ''
+        }
+			});
+    }
 	}
 });
