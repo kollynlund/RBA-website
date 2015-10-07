@@ -94,8 +94,10 @@ video {
 	margin-bottom: -20% !important;
 	@media (max-width: 1000px) {
 		font-size: 1.125em;
-
 	}
+	@media (max-width: 550px) {
+	}
+
 
 	img {
 		width: 170px;
@@ -139,10 +141,15 @@ h6 {
 }
 
 h2 .btn-main {
-	background-color: #faba04;
-	//background-color: #7a0404;
-	border: none;
-	border-radius: 3px;
+	// background-color: rgba(250, 186, 4, .5) !important;
+	// background-color: #7a0404;
+	// border: 2px solid #faba04;
+	background-color: #ccc;
+	border-radius: 0px;
+	color: #333;
+	text-transform: uppercase;
+	font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
 
 a {

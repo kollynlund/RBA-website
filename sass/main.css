@@ -123,63 +123,15 @@ header {
       display: block !important; } }
   .footer h1 {
     font-size: 1.25em;
-    text-transform: uppercase;
     font-weight: bold;
-    color: white; }
-
-.column-left {
-  width: 35%; }
-  .column-left p {
-    margin-bottom: .125em !important; }
-
-.column-right {
-  width: 31%; }
-  .column-right p {
-    margin-bottom: .125em !important; }
-
-.column-center {
-  width: 30%; }
-  .column-center p {
-    margin-bottom: .125em !important; }
-
-.footer-column {
-  margin-top: 0px;
-  color: #6b6a69;
-  display: inline-block;
-  margin: auto;
-  vertical-align: top;
-  font-size: 1em; }
-  @media (max-width: 670px) {
-    .footer-column {
-      display: block !important;
-      width: 100% !important;
-      padding: 0px 10px 10px 10px;
-      font-size: .9em;
-      height: auto; } }
-
-.footer ul {
-  margin: 0;
-  padding: 0;
-  float: left; }
-
-.footer ul li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-  text-transform: lowercase; }
-
-.footer ul li:after {
-  content: " | "; }
-
-.footer ul li:last-child:after {
-  content: ""; }
+    margin: 30px;
+    color: white;
+    font-style: italic; }
 
 .footer p {
   margin: 0;
-  text-align: left;
-  padding-right: 3px;
-  font-size: .9em;
+  text-align: center;
+  font-size: 1.125em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -194,33 +146,16 @@ header {
   color: white;
   font-size: 1.2em; }
 
-.footer-column p {
-  margin-left: 5px; }
-
-.footer-column li {
-  margin-left: 5px;
-  font-size: .9em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: .2em; }
-  .footer-column li:hover {
-    overflow: inherit;
-    white-space: inherit; }
-
 .footer a {
   color: #d9d9de;
   text-decoration: none; }
   .footer a:hover {
     text-decoration: none !important;
-    color: white; }
+    color: #faba04; }
 
 .footer p {
   margin: .3em .2em;
   font-weight: 200; }
-
-.footer li:first-child a {
-  margin-left: 4px; }
 
 .footer a:hover, .footer a:active {
   text-decoration: underline; }
@@ -242,12 +177,6 @@ header {
     text-decoration: none; }
     #copyright a:hover {
       text-decoration: underline; }
-
-a[href="https://www.youtube.com/user/fireboxstove"] i {
-  width: 1.1em; }
-
-a[href="https://www.linkedin.com/pub/byu-technology-transfer/82/48b/a97"] i {
-  width: 1.1em; }
 
 #contact {
   background-color: #fff; }
@@ -857,9 +786,11 @@ h6 {
   margin-top: 5em; }
 
 h2 .btn-main {
-  background-color: #faba04;
-  border: none;
-  border-radius: 3px; }
+  background-color: #ccc;
+  border-radius: 0px;
+  color: #333;
+  text-transform: uppercase;
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif; }
 
 a {
   text-decoration: none; }
