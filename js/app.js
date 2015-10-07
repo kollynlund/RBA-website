@@ -112,12 +112,12 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 .controller('FAQController', function() {})
 .controller('HomeController', function($scope,$window) {
   $scope.windowWidth = $window.innerWidth;
-  $scope.videoHeight = $("video:first").height();
+  $scope.jumboHeight = $("video:first").height() > $("img:first").height() ? $("video:first").height() : $("img:first").height();
   // Watch for changes in the window width
 	$(window).on("resize.doResize", function (){
 		$scope.$apply(function(){
       $scope.windowWidth = $window.innerWidth;
-      $scope.videoHeight = $("video:first").height();
+      $scope.jumboHeight = $("video:first").height() > $("img:first").height() ? $("video:first").height() : $("img:first").height();
 		});
 	});
 	$scope.$on("$destroy",function (){
