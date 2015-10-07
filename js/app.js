@@ -110,7 +110,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
   };
 })
 .controller('FAQController', function() {})
-.controller('HomeController', function($scope) {
+.controller('HomeController', function($scope,$window) {
   $scope.windowWidth = $window.innerWidth;
   $scope.videoHeight = $("video:first").height();
   // Watch for changes in the window width
