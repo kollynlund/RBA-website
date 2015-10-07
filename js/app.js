@@ -64,8 +64,22 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 })
 
-.controller('ApplyController', function() {
+.controller('ApplyController', function($modal) {
+  this.open = function (infoSubject) {
+    var modalInstance = $modal.open({
+      animation: true,
+      templateUrl: 'Application File Info Modals/'+infoSubject+'.html',
+      controller: 'ApplyModalController as amc',
+      size: 'lg'
+    });
+  };
 
+
+})
+.controller('ApplyModalController', function ($modalInstance) {
+  this.close = function () {
+    $modalInstance.close();
+  };
 })
 
 .controller('ContactController', function(DataTransfer) {
@@ -88,11 +102,10 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 .controller('FacultyController', function($modal) {
   this.open = function (facultyMemberName) {
-    console.log('THINGS');
     var modalInstance = $modal.open({
       animation: true,
       templateUrl: 'Faculty Member Profiles/'+facultyMemberName+'.html',
-      controller: 'FacultyModalController',
+      controller: 'FacultyModalController as fmc',
       size: 'lg'
     });
   };
