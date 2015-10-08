@@ -240,7 +240,7 @@
 			<div class="row apply-container">
 				<div class="col-sm-6 col-sm-offset-3">
 					<div id="send-email" class="form-group">
-						<button class="btn" id="btn-positive-submit" ng-click="apc.submitForm()">Submit </button>
+						<button class="btn" id="btn-positive-submit" ng-click="apc.submitForm()" ng-disabled="apc.stupidIdiot || apc.completed">{{apc.stupidIdiot ? 'Finish form before submitting' : (apc.completed ? 'Thanks!' : 'Submit')}} </button>
 					</div>
 				</div>
 			</div>

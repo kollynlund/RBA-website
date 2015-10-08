@@ -59,10 +59,43 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 })
 
 .controller('AboutController', function() {})
-.controller('ApplyController', function($modal, DataTransfer) {
-  this.application = {};
+.controller('ApplyController', function($scope, $modal, DataTransfer) {
+  var apc = this;
+  apc.application = {};
+  apc.stupidIdiot = true;
+  apc.completed = false;
 
-  this.open = function (infoSubject) {
+  $scope.$watchCollection(
+    function watchApplication(){return [apc.application.first_name,apc.application.preferred_name,apc.application.native_language,apc.application.other_languages,apc.application.family_surname,apc.application.date_of_birth,apc.application.how_did_you_hear_about_us,apc.application.gender,apc.application.street_address,apc.application.state_province,apc.application.postal_code,apc.application.telephone_number,apc.application.city,apc.application.country,apc.application.email,apc.application.application_year,apc.application.level_of_education]},
+    function handleAppicationChange(newVals, oldVals) {
+      console.log(newVals);
+      if (
+        newVals[0] &&
+        newVals[1] &&
+        newVals[2] &&
+        newVals[3] &&
+        newVals[4] &&
+        newVals[5] &&
+        newVals[6] &&
+        newVals[7] != 'Gender*' &&
+        newVals[8] &&
+        newVals[9] &&
+        newVals[10] &&
+        newVals[11] &&
+        newVals[12] &&
+        newVals[13] &&
+        newVals[14] &&
+        newVals[15] != 'Year for which you are applying*' &&
+        newVals[16] != 'Highest Level of Education*'
+      ) {
+        apc.stupidIdiot = false;
+      }
+      else {
+        apc.stupidIdiot = true;
+      }
+  });
+
+  apc.open = function (infoSubject) {
     var modalInstance = $modal.open({
       animation: true,
       templateUrl: 'Application File Info Modals/'+infoSubject+'.html',
@@ -71,9 +104,9 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
     });
   };
 
-  this.submitForm = function() {
-    // TODO: Add form validation logic
-		DataTransfer.SendApplication(this.application);
+  apc.submitForm = function() {
+    DataTransfer.SendApplication(apc.application);
+    apc.completed = true;
 	};
 })
 .controller('ApplyModalController', function ($modalInstance) {
