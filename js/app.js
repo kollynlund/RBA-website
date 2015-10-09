@@ -126,7 +126,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 	this.submitForm = function() {
 		DataTransfer.SendContactEmail(this.formData);
-    emailSent = true;
+    this.emailSent = true;
 	};
 })
 .controller('CoursesController', function() {})
