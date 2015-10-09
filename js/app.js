@@ -106,6 +106,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
   apc.submitForm = function() {
     DataTransfer.SendApplication(apc.application);
+    DataTransfer.SendApplicationEmail();
     apc.completed = true;
 	};
 })
@@ -123,7 +124,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 	};
 
 	this.submitForm = function() {
-		DataTransfer.SendEmail(this.formData);
+		DataTransfer.SendContactEmail(this.formData);
 	};
 })
 .controller('CoursesController', function() {})
@@ -187,7 +188,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 
 .factory('DataTransfer',function($http) {
 	return {
-		SendEmail: function(the_data) {
+		SendContactEmail: function(the_data) {
 			return $http({
 				method: 'POST',
 				url: 'https://mandrillapp.com/api/1.0/messages/send.json',
@@ -199,6 +200,31 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 					"message": {
 						"text": 'Name: '+the_data.name+'\nEmail Address: '+the_data.email+'\nPhone Number: '+the_data.phone+'\nMessage: '+the_data.message,
 						"subject": "You have a new message for the RBA site.",
+						"from_email": "signupforroyalbusinessacademy@gmail.com",
+						"from_name": "New Message from RBA site",
+						"to": [
+							{
+								"email": "spencer@royalbusinessacademy.org ",
+								"name": "Spencer Rogers",
+								"type": "to"
+							}
+						]
+					}
+				}
+			});
+		},
+    SendApplicationEmail: function() {
+			return $http({
+				method: 'POST',
+				url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+				headers: {
+					'Content-Type':'application/json'
+				},
+				data: {
+					"key":"h_FdIHNlZN0YdLY8vU8Cfg",
+					"message": {
+						"text": 'You just had a new student apply for Royal Business Academy!',
+						"subject": "New RBA Applicant",
 						"from_email": "signupforroyalbusinessacademy@gmail.com",
 						"from_name": "New Message from RBA site",
 						"to": [
