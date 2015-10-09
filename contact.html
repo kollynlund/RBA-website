@@ -44,7 +44,7 @@
 		<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 
 		<div id="send-email" class="form-group">
-			<button class="btn" id="btn-positive-submit" ng-click="cc.submitForm()">Send </button>
+			<button class="btn" id="btn-positive-submit" ng-click="cc.submitForm()" ng-disabled="cc.emailSent">{{cc.emailSent ? 'Thanks!' : 'Send'}}</button>
 		</div>
 	</div>
 </div>
