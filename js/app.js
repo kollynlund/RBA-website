@@ -198,13 +198,13 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 					"key":"h_FdIHNlZN0YdLY8vU8Cfg",
 					"message": {
 						"text": 'Name: '+the_data.name+'\nEmail Address: '+the_data.email+'\nPhone Number: '+the_data.phone+'\nMessage: '+the_data.message,
-						"subject": "You've had a new student sign up for RBA.",
+						"subject": "You have a new message for the RBA site.",
 						"from_email": "signupforroyalbusinessacademy@gmail.com",
-						"from_name": "New Sign Up!",
+						"from_name": "New Message from RBA site",
 						"to": [
 							{
-								"email": "kollyn.lund@gmail.com",
-								"name": "Kolldryn Grund",
+								"email": "spencer@royalbusinessacademy.org ",
+								"name": "Spencer Rogers",
 								"type": "to"
 							}
 						]
