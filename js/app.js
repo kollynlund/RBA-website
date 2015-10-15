@@ -1,3 +1,5 @@
+var emailRegex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
 angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -115,18 +117,35 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
     $modalInstance.close();
   };
 })
-.controller('ContactController', function(DataTransfer) {
-  this.emailSent = false;
-  this.formData = {
+.controller('ContactController', function($scope, DataTransfer) {
+  var cc = this;
+  cc.formValid = false;
+  cc.emailSent = false;
+  cc.formData = {
 		name:'',
 		email:'',
 		phone:'',
 		message:''
 	};
 
-	this.submitForm = function() {
-		DataTransfer.SendContactEmail(this.formData);
-    this.emailSent = true;
+  $scope.$watchCollection(
+    function watchFormData() {
+      return [cc.formData.name, cc.formData.email]
+    },
+    function handleFormDataChange() {
+      if (cc.formData.name && emailRegex.test(cc.formData.email)) {
+        cc.formValid = true;
+      } else {
+        cc.formValid = false;
+      }
+    }
+  );
+
+	cc.submitForm = function() {
+    if (cc.formValid) {
+      DataTransfer.SendContactEmail(cc.formData);
+      cc.emailSent = true;
+    }
 	};
 })
 .controller('CoursesController', function() {})
@@ -146,7 +165,8 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
   };
 })
 .controller('FAQController', function() {})
-.controller('HomeController', function($scope,$window) {
+.controller('HomeController', function($scope,$window,$state) {
+  var hc = this;
   $scope.windowWidth = $window.innerWidth;
   $scope.jumboHeight = $("video:first").height() > $("img:first").height() ? $("video:first").height() : $("img:first").height();
   // Watch for changes in the window width
@@ -156,6 +176,9 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
       $scope.jumboHeight = $("video:first").height() > $("img:first").height() ? $("video:first").height() : $("img:first").height();
 		});
 	});
+  hc.goToAbout = function() {
+    $state.go('about');
+  }
 	$scope.$on("$destroy",function (){
 		// Kill resize listener
 		 $(window).off("resize.doResize");
@@ -181,8 +204,8 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 	// -------------------------------------
 
 	this.goTo = function(pagename) {
-    $scope.showMenu = false;
 		$state.go(pagename);
+    $scope.showMenu = false;
 	}
 })
 .controller('FooterController', function() {
