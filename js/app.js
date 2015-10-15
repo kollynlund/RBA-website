@@ -181,6 +181,7 @@ angular.module('rba',['ui.router','ui.bootstrap','ngAnimate'])
 	// -------------------------------------
 
 	this.goTo = function(pagename) {
+    $scope.showMenu = false;
 		$state.go(pagename);
 	}
 })
