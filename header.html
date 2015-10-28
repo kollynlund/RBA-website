@@ -1,9 +1,7 @@
 <header ng-controller="HeaderController as hc">
-
     <div class="site-logo">
       <a ng-click="hc.goTo('home')" href="index.html"><img src="assets/profile.png"/></a>
     </div>
-
 
     <span ng-animate="'animated'" ng-click="showMenu = !showMenu; console.log('fdsf')">
       <i ng-if="windowWidth < 935" class="fa fa-bars menu"></i>
@@ -34,6 +32,4 @@
         <a>Apply</a>
       </li>
     </span>
-
-
 </header>
