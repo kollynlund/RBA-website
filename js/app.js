@@ -1,6 +1,6 @@
 (function(app){
   // ROUTES
-  function routes($stateProvider, $urlRouterProvider) {
+  function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -15,9 +15,16 @@
         templateUrl: 'templates/about.html'
       })
 
+      .state('team', {
+        url: '/team',
+        templateUrl: 'templates/team.html',
+        controller: 'CompanyController as fc'
+      })
+
+
       .state('apply', {
-        url: '/apply',
-        templateUrl: 'templates/apply.html',
+        url: '/contact',
+        templateUrl: 'templates/contact.html',
         controller: 'ApplyController as apc'
       })
 
@@ -27,15 +34,31 @@
         controller: 'ContactController as cc'
       })
 
+      .state('HR', {
+        url: '/HR',
+        templateUrl: 'templates/HR.html'
+      })
+
+      .state('startupaccelerators', {
+        url: '/startupaccelerators',
+        templateUrl: 'templates/startupaccelerators.html'
+      })
+
+      .state('comingsoon', {
+        url: '/comingsoon',
+        templateUrl: 'templates/comingsoon.html'
+      })
+
+
       .state('courses', {
         url: '/courses',
         templateUrl: 'templates/courses.html'
       })
 
-      .state('faculty', {
-        url: '/faculty',
-        templateUrl: 'templates/faculty.html',
-        controller: 'FacultyController as fc'
+      .state('roadmaps', {
+        url: '/roadmaps',
+        templateUrl: 'templates/roadmaps.html',
+        controller: 'CompanyController as fc'
       })
 
       .state('faq', {
@@ -48,10 +71,13 @@
         templateUrl: 'templates/newsletter.html'
       })
 
-      .state('philosophy', {
-        url: '/philosophy',
-        templateUrl: 'templates/philosophy.html'
+      .state('platform', {
+        url: '/platform',
+        templateUrl: 'templates/platform.html'
       });
+
+      // $locationProvider.html5Mode(true);
+
   };
 
   // CUSTOM DIRECTIVES
@@ -91,43 +117,16 @@
     function watchApplication() {
       return [
         apc.application.first_name,
-        apc.application.preferred_name,
-        apc.application.native_language,
-        apc.application.other_languages,
-        apc.application.family_surname,
-        apc.application.date_of_birth,
-        apc.application.how_did_you_hear_about_us,
-        apc.application.gender,
-        apc.application.street_address,
-        apc.application.state_province,
-        apc.application.postal_code,
         apc.application.telephone_number,
-        apc.application.city,
-        apc.application.country,
         apc.application.email,
-        apc.application.application_year,
-        apc.application.level_of_education
       ]
     };
     function handleAppicationChange(newVals, oldVals) {
       if (
         newVals[0] &&
         newVals[1] &&
-        newVals[2] &&
-        newVals[3] &&
-        newVals[4] &&
-        newVals[5] &&
-        newVals[6] &&
-        newVals[7] != 'Gender*' &&
-        newVals[8] &&
-        newVals[9] &&
-        newVals[10] &&
-        newVals[11] &&
-        newVals[12] &&
-        newVals[13] &&
-        newVals[14] &&
-        newVals[15] != 'Year for which you are applying*' &&
-        newVals[16] != 'Highest Level of Education*'
+        newVals[2]
+
       ) {
         apc.stupidIdiot = false;
       }
@@ -146,8 +145,8 @@
     };
 
     apc.submitForm = function() {
-      // DataTransfer.SendApplication(apc.application);
-      // DataTransfer.SendApplicationEmail();
+      DataTransfer.SendApplication(apc.application);
+      DataTransfer.SendApplicationEmail();
       apc.completed = true;
       $modal.open({
         animation: true,
@@ -187,12 +186,12 @@
       }
     };
   };
-  function FacultyController($modal) {
+  function CompanyController($modal) {
     var fmc = this;
     fmc.open = function (facultyMemberName) {
       var modalInstance = $modal.open({
         animation: true,
-        templateUrl: 'Faculty Member Profiles/'+facultyMemberName+'.html',
+        templateUrl: 'Modals/'+facultyMemberName+'.html',
         controller: 'GenericModalController as fmc',
         size: 'lg'
       });
@@ -254,11 +253,11 @@
               "text": 'Name: '+the_data.name+'\nEmail Address: '+the_data.email+'\nPhone Number: '+the_data.phone+'\nMessage: '+the_data.message,
               "subject": "You have a new message for the RBA site.",
               "from_email": "signupforroyalbusinessacademy@gmail.com",
-              "from_name": "New Message from RBA site",
+              "from_name": "New Message from MyRoadmap",
               "to": [
                 {
-                  "email": "spencer@royalbusinessacademy.org ",
-                  "name": "Spencer Rogers",
+                  "email": "kollyn.lund@gmail.com ",
+                  "name": "Kollyn Lund",
                   "type": "to"
                 }
               ]
@@ -282,8 +281,8 @@
               "from_name": "New Message from RBA site",
               "to": [
                 {
-                  "email": "spencer@royalbusinessacademy.org ",
-                  "name": "Spencer Rogers",
+                  "email": "kollyn.lund@gmail.com ",
+                  "name": "Kollyn Lund",
                   "type": "to"
                 }
               ]
@@ -294,7 +293,7 @@
       SendApplication: function(the_data) {
         return $http({
           method: 'POST',
-          url: 'https://docs.google.com/forms/d/1hn7YvTiMZZhA3FEm7-UHagXZDvifUx5VbLdRgz37_nE/formResponse',
+          url: 'https://docs.google.com/forms/d/e/1FAIpQLSdxmCFnF5pA9doyY9S3TNv4b1F2HqPsyoDIMMvUkndfRuPWuQ/formResponse',
           headers: {
             'Content-Type':'application/x-www-form-urlencoded'
           },
@@ -306,22 +305,8 @@
           },
           data: {
             'entry.1837275675': the_data.first_name || '',
-            'entry.2057115759': the_data.preferred_name || '',
-            'entry.1691304936': the_data.native_language || '',
-            'entry.961943981': the_data.other_languages || '',
-            'entry.765568650': the_data.family_surname || '',
-            'entry.1496721659': the_data.date_of_birth || '',
-            'entry.1058894701': the_data.how_did_you_hear_about_us || '',
-            'entry.1267007426': the_data.gender || '',
-            'entry.1248163241': the_data.street_address || '',
-            'entry.1538648643': the_data.state_province || '',
-            'entry.326672777': the_data.postal_code || '',
             'entry.757327993': the_data.telephone_number || '',
-            'entry.716204733': the_data.city || '',
-            'entry.753284705': the_data.country || '',
             'entry.344209816': the_data.email || '',
-            'entry.629576774': the_data.application_year || '',
-            'entry.809888668': the_data.level_of_education || ''
           }
         });
       }
@@ -337,7 +322,7 @@
   .controller('HomeController', HomeController)
   .controller('ApplyController', ApplyController)
   .controller('ContactController', ContactController)
-  .controller('FacultyController', FacultyController)
+  .controller('CompanyController', CompanyController)
   .controller('GenericModalController', GenericModalController)
   .controller('HeaderController', HeaderController)
   .controller('FooterController', FooterController)

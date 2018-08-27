@@ -1,6 +1,4 @@
-#contact {
-	background-color: #fff;
-}
+
 
 #success_message {
   display: none;
@@ -19,7 +17,7 @@
 
 #send-email {
 	width: 100%;
-	
+
 }
 
 
@@ -32,17 +30,17 @@
 	}
 	@media (max-width: 500px) {
 		width: 70%;
-	}	
+	}
 	@media (max-width: 400px) {
 		width: 90%;
-	}	
+	}
 }
 
 .form-horizontal .control-label {
     padding-top: .7em !important;
     font-size: 1.2em !important;
     font-weight: 200 !important;
- 
+
 }
 
 
@@ -62,22 +60,26 @@ textarea.form-control {
 
 #btn-positive-submit {
 	display: inline-block !important;
-	background: #f14c2e;
-    background: -moz-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f14c2e),color-stop(100%,#d8452e));
-    background: -webkit-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
-    background: -o-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
-    background: -ms-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
-    background: linear-gradient(to bottom,#f14c2e 0%,#d8452e 100%);
+	// background: #f14c2e;
+  // background: -moz-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
+  // background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f14c2e),color-stop(100%,#d8452e));
+  // background: -webkit-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
+  // background: -o-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
+  // background: -ms-linear-gradient(top,#f14c2e 0%,#d8452e 100%);
+  // background: linear-gradient(to bottom,#f14c2e 0%,#d8452e 100%);
+  background: $action-color;
 	color: white;
 	width: 100%;
 	text-align: center;
 	padding: .5em;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
 	&:hover {
-		color: white !important; 
-		background: darken(#f14c2e, 11.5%)
+		color: white !important;
+		background: darken($action-color, 5%)
 	}
 }
-

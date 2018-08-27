@@ -1,20 +1,21 @@
+@import "variables";
 @import "header";
 @import "footer";
 @import "contact";
 @import "product";
-@import "philosophy";
 @import "courses";
 @import "apply";
 @import "faq";
 @import "faculty";
 @import "about";
 @import "modal";
+@import "solution";
 
-.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
    clear: both;
 }
 
@@ -25,16 +26,15 @@ html {
 }
 
 body {
-//	background-color: #2e3133;
-	background-color: #eee;
+	// background-color: #2e3133 !important;
+// background-color: #FBF7F0;
 	background-color: #edefed !important;
 	font-family: Arial;
-//	background-image: url('../img/blizzard.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	 background-blend-mode: normal;
+	background-blend-mode: normal;
 	margin: 0px;
-	 font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 h1 {
@@ -53,7 +53,7 @@ h2 {
 	padding: 1.25em 0 0em 0;
 	color: #6d6e70;
 	font-weight: 800;
-	h1 {	
+	h1 {
 		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -73,7 +73,7 @@ h2 {
 	color: #eee;
 	font-size: 1.5em !important;
 	position: absolute;
-  top: 30px;
+  top: 19px;
   right: 30px;
 	&:hover {
 		cursor: pointer;
@@ -95,38 +95,131 @@ video {
 	width: 100vw !important;
 }
 
+
+
+
+
+
 .jumbotron-sm {
-	background-image: url(../assets/nyc.jpg);
-	background-size: cover;
-	padding: 1em 0px;
-	min-height: 300px;
+  margin-bottom: 0px;
+  padding: 15px 30px;
+  background: url(../assets/mtn-1.jpg);
+  background-repeat: no-repeat;
+  // margin-bottom: 4em;
+  // background: #3787BE;
+  @media (min-width: 1200px) {
+    min-height: 792px;
+    background-size: 100%;
+    background-position-y: 0px;
+  }
+  @media (min-width: 1015px) and (max-width: 1200px) {
+    min-height: 673px;
+    background-size: 100%;
+    background-position-y: 0px;
+  }
+  @media (max-width: 1015px) {
+    min-height: 673px;
+    background-size: 100%;
+    background-position-y: 0px;
+  }
+  @media (max-width: 950px) {
+    background-size: 100%;
+    padding-top: 70px;
+    background-position-y: 0px;
+    min-height: 517px;
+  }
+  @media (max-width: 816px) {
+    padding-top: 1px;
+    min-height: 430px;
+    background-position-y: -20px;
+  }
+  @media (max-width: 680px) {
+    padding-top: 1px;
+    min-height: 400px;
+    background-position-y: 0px;
+  }
+  @media (max-width: 616px) {
+    padding-top: 1px;
+    background-size: 160%;
+    background-position-x: -250px;
+    background-position-y: -132px;
+  }
+  @media (max-width: 500px) {
+    background-size: 200%;
+    padding-top: 1px;
+    background-position-y: -130px;
+    background-position-x: -370px;
+  }
+  @media (max-width: 400px) {
+    background-size: 200%;
+    padding-top: 1px;
+    background-position-y: -72px;
+    background-position-x: -370px;
+  }
+  @media (max-width: 350px) {
+    background-size: 250%;
+    padding-top: 1px;
+    background-position-y: -92px;
+    background-position-x: -370px;
+  }
+
+
+
+
+
+
 	h2, h1 {
 		margin: 0px;
 	}
 	h1 {
 		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
-		font-weight: 900;
+		font-weight: 700;
 		text-transform: uppercase;
-		color: #eee !important;
-		text-shadow: 2px 2px 2px #000;
-		padding-top: 30px;
+		color: #444;
+    padding-top: 60px;
+    font-size: 3.7em;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    @media (max-width: 1100px) {
+      padding-top: 40px;
+    }
+    @media (max-width: 900px) {
+      font-size: 2em;
+      padding-top: 40px;
+    }
+    @media (max-width: 500px) {
+      font-size: 2em;
+      padding-top: 20px;
+    }
+    @media (max-width: 450px) {
+      font-size: 1.75em;
+      padding-top: 20px;
+      margin-bottom: 5px;
+    }
+    @media (max-width: 400px) {
+      font-size: 1.5em;
+      padding-top: 15px;
+      margin-bottom: 5px;
+    }
 	}
 		h2 {
-		color: #eee;
-		text-shadow: 2px 2px 2px #000;
-		width: 60%;
-		font-weight: 300;
-		margin: auto;
+    font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		color: #555;
+		font-weight: 400;
 		margin-bottom: 20px;
 		font-size: 2em;
-	@media (max-width: 1000px) {
-		font-size: 1.125em;
-	}
-	}	
-
-
-	@media(min-width: 600px) {
-		display: none;
+    @media (max-width: 900px) {
+      font-size: 1.5em;
+    }
+  	@media (max-width: 700px) {
+  		font-size: 1.35em;
+  	}
+    @media (max-width: 500px) {
+  		font-size: 1.25em;
+  	}
+    @media (max-width: 400px) {
+  		font-size: 1.1em;
+  	}
 	}
 }
 
@@ -153,7 +246,7 @@ video {
 	img {
 		width: 170px;
 	}
-	h1 {	
+	h1 {
 		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -192,15 +285,18 @@ h6 {
 }
 
 h2 .btn-main {
-	// background-color: rgba(250, 186, 4, .5) !important;
-	// background-color: #7a0404;
-	// border: 2px solid #faba04;
-	background-color: #ccc;
+	background-color: $action-color;
 	border-radius: 0px;
-	color: #333;
+	color: #eee;
 	text-transform: uppercase;
 	font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
-
+  border-radius: 3px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  &:hover {
+    background-color: darken($action-color, 5%);
+    color: #eee;
+  }
 }
 
 a {
@@ -253,7 +349,7 @@ button[type="reset"] {
 	border-top-left-radius: 0px !important;
 	border-bottom-left-radius: 0px !important;
 	border-top-right-radius: 4px !important;
-	border-bottom-right-radius: 4px !important;	
+	border-bottom-right-radius: 4px !important;
 	border: none;
 	background-color: #f14c2e;
 	color: #fff;
@@ -288,8 +384,27 @@ footer {
 
 
 
-
-
+.logos-container {
+  padding: 15px;
+  background: #2E3133;
+  display: block;
+  margin-bottom: 50px;
+}
+.logo {
+  img {
+    width: 100%;
+    @media (max-width: 767px) {
+      width: 35%;
+      display: block;
+      margin: auto;
+    }
+    @media (max-width: 567px) {
+      width: 50%;
+      display: block;
+      margin: auto;
+    }
+  }
+}
 
 
 
@@ -311,8 +426,8 @@ footer {
     user-select: none;
 
 
-    
-    
+
+
 }
 
 #overlay img {
