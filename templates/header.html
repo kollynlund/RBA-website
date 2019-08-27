@@ -1,29 +1,43 @@
 <header ng-controller="HeaderController as hc">
     <div class="site-logo">
-      <a ui-sref="home" href="index.html"><img src="assets/logo-green.svg"/></a>
+      <a ui-sref="home" href="index.html"><img src="assets/logo-tm.svg"/></a>
     </div>
 
-    <span ng-animate="'animated'" ng-click="showMenu = !showMenu; console.log('fdsf')">
+    <span ng-animate="'animated'" ng-click="showMenu = !showMenu; console.log('open')">
       <i ng-if="windowWidth < 935" class="fa fa-bars menu"></i>
     </span>
 
     <span ng-if="windowWidth >= 935 || showMenu" class="main-header">
       <ul class="primary-menu">
-        <!-- <li class="primary-menu-link" ui-sref="about">
-          <a>Our Why</a>
-        </li> -->
-        <li class="primary-menu-link" ui-sref="platform">
-          <a>Product</a>
-        </li>
-        <li class="primary-menu-link" ui-sref="roadmaps">
-          <a>Roadmaps</a>
-        </li>
-        <li class="primary-menu-link" ui-sref="team">
-          <a>Company</a>
-        </li>
-        <li class="primary-menu-link" ui-sref="contact">
-          <a>Contact</a>
-        </li>
+
+
+        <span dropdown>
+          <li id="solutions" class="primary-menu-link-dropdown dropdown-link" dropdown-toggle ng-disabled="disabled">
+            Solutions <span class="caret"></span>
+          </li>
+
+          <ul class="dropdown-menu" dropdown-menu role="menu" aria-labelledby="solutions">
+            <li role="menuitem"><a ui-sref="recoverycoaching">Addiction Recovery</a></li>
+            <li role="menuitem"><a ui-sref="salescoaching">Sales Coaching</a></li>
+            <li role="menuitem"><a ui-sref="product">Other Solutions</a></li>
+          </ul>
+        </span>
+
+
+        <span dropdown>
+          <li id="company" class="primary-menu-link-dropdown dropdown-link" dropdown-toggle ng-disabled="disabled">
+            Company <span class="caret"></span>
+          </li>
+
+          <ul class="dropdown-menu" dropdown-menu role="menu" aria-labelledby="company">
+            <li role="menuitem"><a ui-sref="team">About</a></li>
+            <li role="menuitem"><a ui-sref="contact">Contact Us</a></li>
+          </ul>
+        </span>
+
+
+
+
       </ul>
 
 
@@ -36,4 +50,9 @@
       </li>
 
     </span>
+
+
+
+
+
 </header>

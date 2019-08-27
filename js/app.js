@@ -15,6 +15,16 @@
         templateUrl: 'templates/about.html'
       })
 
+      .state('recoverycoaching', {
+        url: '/recoverycoaching',
+        templateUrl: 'templates/recoverycoaching.html'
+      })
+
+      .state('salescoaching', {
+        url: '/salescoaching',
+        templateUrl: 'templates/salescoaching.html'
+      })
+
       .state('team', {
         url: '/team',
         templateUrl: 'templates/team.html',
@@ -34,10 +44,21 @@
         controller: 'ContactController as cc'
       })
 
-      .state('HR', {
-        url: '/HR',
-        templateUrl: 'templates/HR.html'
+      .state('privacy-statement', {
+        url: '/privacy-statement',
+        templateUrl: 'templates/privacy-statement.html'
       })
+
+      .state('security-statement', {
+        url: '/security-statement',
+        templateUrl: 'templates/security-statement.html'
+      })
+
+      .state('terms-of-service', {
+        url: '/terms-of-service',
+        templateUrl: 'templates/terms-of-service.html'
+      })
+
 
       .state('startupaccelerators', {
         url: '/startupaccelerators',
@@ -55,9 +76,15 @@
         templateUrl: 'templates/courses.html'
       })
 
-      .state('roadmaps', {
-        url: '/roadmaps',
-        templateUrl: 'templates/roadmaps.html',
+      .state('solutions', {
+        url: '/solutions',
+        templateUrl: 'templates/solutions.html',
+        controller: 'CompanyController as fc'
+      })
+
+      .state('support', {
+        url: '/support',
+        templateUrl: 'templates/support.html',
         controller: 'CompanyController as fc'
       })
 
@@ -71,9 +98,9 @@
         templateUrl: 'templates/newsletter.html'
       })
 
-      .state('platform', {
-        url: '/platform',
-        templateUrl: 'templates/platform.html'
+      .state('product', {
+        url: '/product',
+        templateUrl: 'templates/product.html'
       });
 
       // $locationProvider.html5Mode(true);
@@ -313,6 +340,8 @@
     }
   };
 
+
+
   // RANDOM GLOBAL UTILITIES
   var emailRegex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
@@ -328,4 +357,4 @@
   .controller('FooterController', FooterController)
   .factory('VideoSize', VideoSize)
   .factory('DataTransfer', DataTransfer)
-})(angular.module('rba',['ui.router','ui.bootstrap','ngAnimate']));
+})(angular.module('myroadmap',['ui.router','ui.bootstrap','ngAnimate', 'ngSanitize']));

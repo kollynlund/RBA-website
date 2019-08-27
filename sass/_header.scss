@@ -1,12 +1,9 @@
 header {
 	width: 100%;
-	// border-bottom: solid 1px #d9d9de;
 	display: block;
 	background-color: #222;
-	background-color: #3E474D;
-	background-color: #17699F;
-	background-color: #2E3133;
 	margin-top: 0px;
+	font-family: Quicksand;
 
 }
 
@@ -23,25 +20,16 @@ header {
       padding: 2px;
 			margin-bottom: 1px;
 			margin-top: 0px;
-
-
     }
     @media (max-width: 935px){
         width: 100%;
         text-align: center;
         margin-left: 0px;
     }
-    // @media (max-width: 935px){
-    //     display: block;
-    //     margin: .5em auto;
-    //     padding: 1em !important;
-    //     width: 100%;
-    // }
-
 }
 
 .primary-menu {
-  width: 50%;
+  width: 40%;
 	margin: 0px 0px 0px 0px;
 	display: inline-block;
   padding-left: 0px;
@@ -49,6 +37,29 @@ header {
       padding-left: 0px;
       width: 100%;
   }
+	.dropdown-menu {
+		@media (max-width: 935px) {
+			border-radius: 0px;
+			position: relative;
+			margin-bottom: 10px;
+			padding-bottom: 0px;
+		}
+	}
+	.dropdown-menu>li>a {
+		padding: 7px 20px;
+		font-size: 16px;
+		@media (max-width: 935px) {
+			padding: 10px 20px;
+
+		}
+	}
+	.open>.dropdown-menu {
+		margin-top: 10px;
+		@media (max-width: 935px) {
+			margin-top: -2px;
+			border-radius: 0px;
+		}
+	}
 
 }
 
@@ -58,10 +69,9 @@ header {
     &:hover {
         cursor: pointer;
     }
-    @media (max-width: 835px) {
+    @media (max-width: 935px) {
         display: block;
         text-align: center;
-        background-color: #222;
         width: 100vw;
         margin-left: 0px;
         border-bottom: 1px solid #ccc;
@@ -78,10 +88,10 @@ header {
         padding-left: 30px !important;
         padding-right: 30px !important;
     }
-    @media (max-width: 835px) {
+    @media (max-width: 935px) {
         float: none;
     }
-    @media (max-width: 835px) {
+    @media (max-width: 935px) {
         display: block;
         text-align: center;
         background-color: #222;
@@ -101,11 +111,13 @@ header {
 	float: right;
 	margin-top: 27px;
 	margin-right: 15px;
-	@media (max-width: 835px){
+	list-style: none;
+	@media (max-width: 935px){
 		float: none;
 		width: 100%;
 		margin-top: 0;
 		background: #222;
+		margin-top: 18px;
 	}
 	 a {
 		background: #67B051;
@@ -118,7 +130,7 @@ header {
 			text-decoration: none;
 			color: #fff;
 		}
-		@media (max-width: 835px){
+		@media (max-width: 935px){
 			display: block;
 			text-align: center;
 			color: #67B051;
@@ -136,7 +148,7 @@ header {
 	}
 }
 
-.primary-menu-link a {
+.primary-menu-link a, .dropdown-link {
 	padding: 30px 20px 30px 20px;
   color: #eee;
   display: inline-block;
@@ -144,16 +156,13 @@ header {
   font-weight: 500;
   letter-spacing: .06em;
   &:hover {
-  	// background: #f7fafa;
-    // background: #444;
-		// background: darken(#17699F, 4%);
     text-decoration: none;
     color: #aaa;
   }
-  @media (max-width: 835px){
+  @media (max-width: 935px){
      padding: 23px 10px 20px 10px;
   }
-  @media (max-width: 835px) {
+  @media (max-width: 935px) {
       color: #d9d9de;
       padding: 1.25em;
       &:hover {
