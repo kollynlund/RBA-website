@@ -1,0 +1,126 @@
+.faculty h1 {
+	margin-bottom: 2em !important;
+}
+
+.faculty:last-child {
+	margin-bottom: 4em;
+}
+
+.social {
+	font-size: 29px;
+	color: #444;
+}
+
+.faculty {
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	h2 {
+		font-weight: 300;
+	  text-transform: uppercase;
+	  color: #eee;
+	  margin-bottom: 1em;
+	}
+
+	.box {
+		// box-shadow: 0 1px 15px -4px rgba(0,0,0,.3);
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+    border-radius: 4px;
+		min-height: 80px;
+		margin: auto;
+		margin-bottom: 35px;
+		max-width: 440px;
+		h1 {
+			color: #eee;
+			text-transform: uppercase;
+			letter-spacing: .4px;
+		}
+		p {
+			padding: 0 1em 1em;
+			text-align: left;
+			font-size: 1.125em;
+			font-weight: 400;
+		}
+		.icon {
+			display: block;
+			color: #222;
+			font-size: 30px;
+			margin: 0px auto;
+			text-align: center;
+			margin-top: 24px;
+		}
+		.title {
+			padding-top: .5em;
+	    font-size: 1.25em;
+	    padding-bottom: .35em;
+	    letter-spacing: 1px;
+	    color: #444;
+	    text-align: center;
+	    font-weight: bold;
+			font-family: Quicksand;
+		}
+
+
+
+	}
+
+
+
+}
+
+.cards {
+	&:hover {
+		opacity: .8;
+		cursor: pointer;
+	}
+	@media (max-width: 767px) {
+		width: 60%;
+		margin: auto;
+		}
+	@media (max-width: 450px) {
+		width: 90%;
+		margin: auto;
+		}
+	img {
+		text-align: center;
+		width: 100%;
+
+	}
+	.details {
+		text-align: center;
+		padding: 1em .5em;
+		background-color: #fff;
+		color: #000;
+		text-transform: uppercase;
+	  padding-bottom: 0px;
+	  margin-bottom: 30px;
+	  .name {
+	  	font-family: Quicksand,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	  	font-size: 1.25em;
+			margin-bottom: 2px;
+		  white-space: nowrap;
+			width: 100%;
+		  overflow: hidden;              /* "overflow" value must be different from "visible" */
+		  text-overflow: ellipsis;
+	  }
+	  .title {
+	  	font-family: Quicksand,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	  	font-weight: 400;
+	  	letter-spacing: 1px;
+	  	padding: 0em 1.125em;
+	  	height: 3em;
+			width: 100%;
+		  overflow: hidden;              /* "overflow" value must be different from "visible" */
+		  text-overflow: ellipsis;
+
+	  }
+	  p:first-child {
+	  	&:before {
+	  		content: " - ";
+	  	}
+	  	&:after {
+	  		content: " - ";
+	  	}
+	  }
+	}
+}

@@ -20,6 +20,11 @@
         templateUrl: 'templates/recoverycoaching.html'
       })
 
+      .state('mentalhealth', {
+        url: '/mentalhealth',
+        templateUrl: 'templates/mentalhealth.html'
+      })
+
       .state('salescoaching', {
         url: '/salescoaching',
         templateUrl: 'templates/salescoaching.html'
